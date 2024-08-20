@@ -16,15 +16,17 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body>
-          <header className="flex justify-end pt-2 px-3">
+          <header className="flex justify-end p-6 m-auto max-w-[1560px] ">
             <SignedOut>
-              <SignInButton />
+              <div className="bg-[#E50914] py-3 px-5 rounded-[6px] font-semibold">
+                <SignInButton />
+              </div>
             </SignedOut>
             <SignedIn>
               <UserButton />
             </SignedIn>
           </header>
-          <main className="h-screen">{children}</main>
+          <main>{children}</main>
         </body>
       </html>
     </ClerkProvider>
