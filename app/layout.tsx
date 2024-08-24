@@ -1,3 +1,5 @@
+import "tailwindcss/tailwind.css";
+
 import { ClerkProvider } from "@clerk/nextjs";
 import "../src/globals.css";
 import { Header } from "../src/components/atomic/Header";
@@ -12,7 +14,9 @@ export default function RootLayout({
       <ClerkProvider>
         <body>
           <Header />
-          <main>{children}</main>
+          <main className="flex min-h-[calc(100vh-85px)] flex-col items-center justify-between">
+            {children}
+          </main>
         </body>
       </ClerkProvider>
     </html>
