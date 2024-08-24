@@ -1,11 +1,16 @@
-"use client";
-
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-// import "../src/globals.css";
+import Image from "next/image";
+import netflixLogo from "@/public/netflixlogo.png";
 
 const Header = () => {
   return (
-    <header className="flex justify-end p-6 m-auto max-w-[1560px] ">
+    <header className="flex justify-between p-6 m-auto max-w-[1560px]">
+      <Image
+        className="object-contain"
+        src={netflixLogo}
+        alt="Netflix logo"
+        width={120}
+      />
       <SignedOut>
         <div className="bg-primary py-3 px-5 rounded-[6px] font-semibold">
           <SignInButton />

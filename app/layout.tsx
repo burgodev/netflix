@@ -1,6 +1,6 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import "../src/globals.css";
-import { Header } from "@/src/components/atomic/Header";
+import { Header } from "../src/components/atomic/Header";
 
 export default function RootLayout({
   children,

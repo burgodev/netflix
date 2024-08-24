@@ -4,5 +4,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <main className="h-screen">{children}</main>;
+  return <div>{children}</div>;
 }
