@@ -4,7 +4,7 @@ import netflixLogo from "@/public/netflixlogo.png";
 
 const Header = () => {
   return (
-    <header className="flex justify-between p-6 m-auto max-w-[1560px]">
+    <header className="flex justify-between p-6 m-auto max-w-[1560px] w-[100%] fixed z-10 ">
       <Image
         className="object-contain"
         src={netflixLogo}
