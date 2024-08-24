@@ -2,7 +2,7 @@ import Image from "next/image";
 import BackgroundImage from "../src/assets/background.jpg";
 import { SignInButton } from "@clerk/nextjs";
 
-export default function Home() {
+export default function Login() {
   return (
     <div className="h-[92vh] flex align-center justify-center">
       <Image
