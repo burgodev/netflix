@@ -5,7 +5,7 @@ import netflixBanner from "@/public/netflixbanner.jpg";
 const Banner = () => {
   return (
     <div
-      className="relative max-h-[600px] width-[100%]" // TODO: WTF is going on here?
+      className="relative max-h-[600px]" // TODO: WTF is going on here?
       style={{ height: 600, width: "100%" }}
     >
       <div className="absolute inset-0">
