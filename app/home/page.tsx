@@ -1,4 +1,4 @@
-import { Banner } from "@/src/components/atomic/Banner";
+import { Banner } from "@/src/components/Banner";
 
 import { auth } from "@clerk/nextjs/server";
 
