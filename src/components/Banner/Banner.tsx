@@ -1,7 +1,7 @@
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import netflixBanner from "@/public/netflixbanner.jpg";
 import { Typography } from "../atomic/Typography";
+import { Button } from "../atomic";
 
 const Banner = () => {
   return (
@@ -18,13 +18,9 @@ const Banner = () => {
       </div>
       <div className="relative ml-8 pt-36 h-48">
         <h1 className="text-3xl font-extrabold pb-1">Narcos</h1>
-        <div className="flex space-x-4">
-          <button className="cursor-pointer text-white outline-none border-none font-bold rounded-sm px-8 mr-4 py-2 bg-gray-700 bg-opacity-50 hover:text-black hover:bg-gray-300 transition-all duration-200">
-            Play
-          </button>
-          <button className="cursor-pointer text-white outline-none border-none font-bold rounded-sm px-8 mr-4 py-2 bg-gray-700 bg-opacity-50 hover:text-black hover:bg-gray-300 transition-all duration-200">
-            My List
-          </button>
+        <div className="flex gap-3">
+          <Button>Play</Button>
+          <Button>More Info</Button>
         </div>
         {/* <h1 className="w-180 leading-6 pt-4 text-xs max-w-xs h-20"> */}
         {/* {truncate(movie?.overview, 150)} */}
