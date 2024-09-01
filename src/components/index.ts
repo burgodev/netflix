@@ -1,6 +1,6 @@
 export { Banner } from "./Banner";
 export { Header } from "./Header";
-export { Movie } from "./Movie";
+export { Media } from "./Media";
 export { VideoList } from "./VideoList";
 export { Navigation } from "./Navigation";
 export * from "./atomic";
