@@ -16,8 +16,13 @@ const Banner = () => {
           className="object-contain "
         />
       </div>
-      <div className="relative ml-8 pt-36 h-48">
+      <div className="absolute flex flex-col ml-8 pt-36 h-48 gap-4">
         <h1 className="text-3xl font-extrabold pb-1">Narcos</h1>
+        <Typography variant="body">
+          Watch live on Sept. 2 as hot dog-eating champion Joey Chestnut faces
+          off against rival Takeru Kobayashi in the ultimate wiener-takes-all
+          competition.
+        </Typography>
         <div className="flex gap-3">
           <Button>Play</Button>
           <Button>More Info</Button>
@@ -25,11 +30,7 @@ const Banner = () => {
         {/* <h1 className="w-180 leading-6 pt-4 text-xs max-w-xs h-20"> */}
         {/* {truncate(movie?.overview, 150)} */}
 
-        <Typography variant="body">
-          Watch live on Sept. 2 as hot dog-eating champion Joey Chestnut faces
-          off against rival Takeru Kobayashi in the ultimate wiener-takes-all
-          competition.
-        </Typography>
+
         {/* </h1> */}
       </div>
       <div className="absolute bottom-0 w-full h-30 bg-gradient-to-b from-transparent to-black"></div>
