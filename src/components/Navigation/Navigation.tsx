@@ -15,7 +15,7 @@ const Navigation = () => {
 
   return (
     <Stack className="align-center">
-      <ul className="flex gap-8">
+      <ul className="flex gap-8 align-center">
         <li>
           <Link href="/home">
             <Typography
