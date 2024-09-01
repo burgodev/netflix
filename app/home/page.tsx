@@ -1,4 +1,5 @@
 import { Banner } from "@/src/components/Banner";
+import { VideoList } from "@/src/components/VideoList";
 
 import { auth } from "@clerk/nextjs/server";
 
@@ -7,6 +8,7 @@ export default function Home() {
   return (
     <div className="w-[100%]">
       <Banner />
+      <VideoList />
     </div>
   );
 }
