@@ -23,8 +23,6 @@ const VideoList = () => {
         const json = await response.json();
         const arr = tmdbVideoToVideo(json.results);
 
-        console.log("arr", arr);
-
         setVideos(arr);
 
         console.log(json);
