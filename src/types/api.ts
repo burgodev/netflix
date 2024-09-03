@@ -27,7 +27,8 @@ export type Video = {
   title: string;
   overview: string;
   mediaType: Media;
-  imagePath: string;
+  image: string;
+  backgroundImage: string;
   releaseData: string;
   rating: number;
 };
