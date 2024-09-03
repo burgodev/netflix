@@ -2,9 +2,11 @@
 // ideally, we want to keep these api related types in sync
 // with the backend instead of manually writing them out
 
+export type Media = "movie" | "tvShow";
+
 export type TmdbVideo = {
   backdrop_path: string;
-  id: number;
+  id: string;
   title: string;
   original_title: string;
   overview: string;
@@ -24,7 +26,7 @@ export type Video = {
   id: string;
   title: string;
   overview: string;
-  mediaType: "movie" | "tvShow";
+  mediaType: Media;
   imagePath: string;
   releaseData: string;
   rating: number;

@@ -1,4 +1,4 @@
-import { TmdbVideo } from "../types/api";
+import { Media, TmdbVideo } from "../types/api";
 
 // The Movie Database API to Video Mapper
 export const tmdbVideoToVideo = (tmdbVideo: TmdbVideo[]) =>
@@ -6,7 +6,7 @@ export const tmdbVideoToVideo = (tmdbVideo: TmdbVideo[]) =>
     id: video.id,
     title: video.title,
     overview: video.overview,
-    mediaType: video.media_type,
+    mediaType: video.media_type as Media,
     backgroundImagePath: video.backdrop_path,
     imagePath: video.poster_path,
     releaseData: video.release_date,
