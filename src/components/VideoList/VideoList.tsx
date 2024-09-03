@@ -5,7 +5,8 @@ import { tmdbVideoToVideo } from "@/src/mappers/tmdbVideoToVideo";
 import { Video } from "@/src/types/api";
 
 import { useEffect, useState } from "react";
-import { Typography } from "../atomic";
+import { Stack, Typography } from "../atomic";
+import { Media } from "../Media";
 
 const VideoList = () => {
   const [videos, setVideos] = useState<Video[]>();
@@ -34,13 +35,11 @@ const VideoList = () => {
   }, []);
 
   return (
-    <div>
-      {videos?.map((video) => (
-        <Typography key={video.id} variant={"h1"}>
-          {video.title}
-        </Typography>
+    <Stack className="overflow-x-auto gap-2">
+      {videos?.map((media) => (
+        <Media video={media} key={media.id} />
       ))}
-    </div>
+    </Stack>
   );
 };
 
