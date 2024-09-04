@@ -5,8 +5,9 @@ import { Button } from "../atomic";
 
 const Banner = () => {
   return (
-    <div className="relative h-[80vh]">
+    <div className="relative h-[45vw]">
       <div className="absolute inset-0">
+        {/* TODO: This image can probably be a background-image */}
         <Image
           src={netflixBanner}
           layout="fill"
