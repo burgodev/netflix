@@ -7,7 +7,7 @@ import { Navigation } from "../Navigation";
 const Header = () => {
   return (
     <header className="fixed z-10 w-screen">
-      <div className="flex justify-between p-6 lg:py-6 lg:px-20 m-auto bg-[linear-gradient(180deg,rgba(0,0,0,.7)_10%,transparent)]">
+      <div className="flex justify-between px-[2.5vw] lg:py-6 m-auto bg-[linear-gradient(180deg,rgba(0,0,0,.7)_10%,transparent)]">
         <Stack className="gap-8">
           <Image
             className="object-contain"
