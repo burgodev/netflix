@@ -1,43 +1,19 @@
 "use client";
 
-import requests from "@/src/api/requests";
-import { tmdbVideoToVideo } from "@/src/mappers/tmdbVideoToVideo";
+import { FC } from "react";
+import { Stack } from "../atomic";
+import { Media } from "../Media";
 import { Video } from "@/src/types/api";
 
-import { useEffect, useState } from "react";
-import { Stack, Typography } from "../atomic";
-import { Media } from "../Media";
+type VideoListProps = {
+  videos: Video[];
+};
 
-const VideoList = () => {
-  const [videos, setVideos] = useState<Video[]>();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const url = requests.fetchTrending;
-
-      try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw new Error(`Response status: ${response.status}`);
-        }
-
-        const json = await response.json();
-        const arr = tmdbVideoToVideo(json.results);
-
-        setVideos(arr);
-
-        console.log(json);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchData();
-  }, []);
-
+const VideoList: FC<VideoListProps> = ({ videos }) => {
   return (
-    <Stack className="overflow-x-auto gap-2">
-      {videos?.map((media) => (
-        <Media video={media} key={media.id} />
+    <Stack className="overflow-x-auto flex-row gap-2 translate-y--5vh">
+      {videos.map((video) => (
+        <Media video={video} key={video.id} />
       ))}
     </Stack>
   );
