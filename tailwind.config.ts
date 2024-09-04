@@ -12,6 +12,14 @@ const config: Config = {
       colors: {
         primary: "#E50914",
       },
+      fontSize: {
+        xs: "0.8rem",
+        sm: "0.9rem",
+        base: "1vw",
+        md: "1.25vw",
+        lg: "1.5vw",
+        xl: "2vw",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
