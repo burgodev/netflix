@@ -7,7 +7,7 @@ type StackProps = {
 };
 
 const Stack = ({ children, className }: StackProps) => {
-  return <div className={cn("flex", className)}>{children}</div>;
+  return <div className={cn("flex flex-col", className)}>{children}</div>;
 };
 
 export default memo(Stack);
