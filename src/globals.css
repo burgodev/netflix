@@ -19,7 +19,7 @@
 /* width */
 ::-webkit-scrollbar {
   opacity: 0;
-  display: none; // TODO: target only specific elements
+  display: none; /*  TODO: target only specific elements */
 }
 
 /* Track */
