@@ -12,7 +12,7 @@ type VideoProps = {
 const Media: FC<VideoProps> = ({ video }) => {
   console.log("video", video);
   return (
-    <div className="relative min-w-[10vw] min-h-[10vw] flex-1">
+    <div className="relative min-w-[15vw] min-h-[10vw] flex-1">
       <Image
         objectFit="cover"
         layout="fill"
