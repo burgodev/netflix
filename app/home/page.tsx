@@ -6,7 +6,7 @@ import { auth } from "@clerk/nextjs/server";
 export default function Home() {
   auth().protect();
   return (
-    <div className="w-[100%]">
+    <div className="w-[100%] pl-[2.5vw]">
       <Banner />
       <VideoList />
     </div>
