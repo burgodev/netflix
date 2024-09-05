@@ -9,10 +9,12 @@ import { useVideoQuery } from "@/src/hooks";
 
 type VideoCategoryProps = {
   title: string;
-  videos: Video[];
+  fetchUrl: string;
 };
 
-const VideoCategory: FC<VideoCategoryProps> = ({ title, videos }) => {
+const VideoCategory: FC<VideoCategoryProps> = ({ title, fetchUrl }) => {
+  const { videos, loading } = useVideoQuery({ fetchUrl });
+
   return (
     <Stack className="gap-2">
       <Typography variant="body">{title}</Typography>

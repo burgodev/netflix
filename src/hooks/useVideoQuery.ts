@@ -1,20 +1,21 @@
 import { useEffect, useState } from "react";
 
-import requests from "@/src/api/requests";
 import { tmdbVideoToVideo } from "@/src/mappers/tmdbVideoToVideo";
 import { Video } from "@/src/types/api";
 
-const useVideoQuery = () => {
+type UseVideoQueryProps = {
+  fetchUrl: string;
+};
+
+const useVideoQuery = ({ fetchUrl }: UseVideoQueryProps) => {
   const [videos, setVideos] = useState<Video[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
-      const url = requests.fetchTrending;
-
       try {
         setLoading(true);
-        const response = await fetch(url);
+        const response = await fetch(fetchUrl);
         if (!response.ok) {
           throw new Error(`Response status: ${response.status}`);
         }
@@ -32,7 +33,7 @@ const useVideoQuery = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [fetchUrl]);
 
   return { videos, loading };
 };
