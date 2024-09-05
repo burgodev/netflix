@@ -14,7 +14,7 @@ export default function RootLayout({
       <ClerkProvider>
         <body>
           <Header />
-          <main className="flex min-h-[calc(100vh-85px)] flex-col items-center justify-between">
+          <main className="flex min-h-[calc(100vh-85px)] flex-col items-center justify-between overflow-x-hidden">
             {children}
           </main>
         </body>
