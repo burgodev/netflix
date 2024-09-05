@@ -1,5 +1,5 @@
 import { Video } from "@/src/types/api";
-import { Typography } from "../atomic";
+import { Stack, Typography } from "../atomic";
 import { FC } from "react";
 import Image from "next/image";
 
@@ -10,20 +10,24 @@ type VideoProps = {
 };
 
 const Media: FC<VideoProps> = ({ video }) => {
-  console.log("video", video);
   return (
-    <div className="relative w-full h-full min-w-[15vw] min-h-[10vw] flex-1 transform transition-transform duration-300 hover:scale-150 hover:z-10">
-      <Image
-        objectFit="cover"
-        layout="fill"
-        alt={video.title}
-        // TODO: isLargeRow ? movie.poster_path : movie.backdrop_path
-        src={`${base_url}${video.backgroundImage}`}
-      />
+    <div className="relative group opacity-90 transform transition-transform duration-300 hover:scale-150 hover:z-10 hover:opacity-100">
+      <div className="relative w-full h-full min-w-[15vw] min-h-[10vw] flex-1">
+        <Image
+          className="rounded-[6px]"
+          objectFit="cover"
+          layout="fill"
+          alt={video.title}
+          src={`${base_url}${video.backgroundImage}`}
+        />
+      </div>
 
-      {/* <Typography variant={"h1"}>{video.title}</Typography> */}
+      <Stack className="bg-[#141414] h-10vh opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <Stack className="flex-row">1</Stack>
+        <Stack className="flex-row">2</Stack>
+        <Stack className="flex-row">3</Stack>
+      </Stack>
     </div>
   );
 };
-
 export default Media;
