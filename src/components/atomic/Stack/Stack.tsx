@@ -3,7 +3,7 @@ import { memo } from "react";
 
 type StackProps = {
   className?: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 const Stack = ({ children, className }: StackProps) => {
