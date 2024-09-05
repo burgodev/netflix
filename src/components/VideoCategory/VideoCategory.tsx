@@ -16,7 +16,7 @@ const VideoCategory: FC<VideoCategoryProps> = ({ title, fetchUrl }) => {
   const { videos, loading } = useVideoQuery({ fetchUrl });
 
   return (
-    <Stack className="gap-2">
+    <Stack className="gap-2 min-h-[25vh]">
       <Typography variant="body">{title}</Typography>
       <VideoList videos={videos} />
     </Stack>
