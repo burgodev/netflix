@@ -2,6 +2,12 @@ import { Video } from "@/src/types/api";
 import { Stack, Typography } from "../atomic";
 import { FC } from "react";
 import Image from "next/image";
+import {
+  PlayIcon,
+  PlusIcon,
+  HandThumbUpIcon,
+  ChevronDownIcon,
+} from "@heroicons/react/24/solid";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
@@ -23,7 +29,12 @@ const Media: FC<VideoProps> = ({ video }) => {
       </div>
 
       <Stack className="bg-[#141414] h-10vh opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <Stack className="flex-row">1</Stack>
+        <Stack className="flex-row">
+          <PlayIcon className="h-6 w-6 text-white" />
+          <PlusIcon className="h-6 w-6 text-white" />
+          <HandThumbUpIcon className="h-6 w-6 text-white" />
+          <ChevronDownIcon className="h-6 w-6 text-white" />
+        </Stack>
         <Stack className="flex-row">2</Stack>
         <Stack className="flex-row">3</Stack>
       </Stack>
