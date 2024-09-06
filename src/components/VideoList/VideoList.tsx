@@ -2,11 +2,11 @@
 
 import { FC } from "react";
 import { Stack } from "../atomic";
-import { Media } from "../Media";
-import { Video } from "@/src/types/api";
+import { Video } from "../Video";
+import { Video as VideoType } from "@/src/types/api";
 
 type VideoListProps = {
-  videos: Video[];
+  videos: VideoType[];
 };
 
 const VideoList: FC<VideoListProps> = ({ videos }) => {
@@ -14,7 +14,7 @@ const VideoList: FC<VideoListProps> = ({ videos }) => {
     <Stack className="overflow-visible flex-row gap-2 translate-y--5vh cursor-pointer">
       {videos.map((video) => (
         <div key={video.id} className="relative">
-          <Media video={video} />
+          <Video video={video} />
         </div>
       ))}
     </Stack>

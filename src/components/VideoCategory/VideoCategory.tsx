@@ -1,9 +1,7 @@
 "use client";
 
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { Stack, Typography } from "../atomic";
-import { Media } from "../Media";
-import { Video } from "@/src/types/api";
 import { VideoList } from "../VideoList";
 import { useVideoQuery } from "@/src/hooks";
 
