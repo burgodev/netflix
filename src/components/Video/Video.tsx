@@ -24,7 +24,7 @@ const Video: FC<VideoProps> = ({ video }) => {
         />
       </div>
 
-      <VideoInfo />
+      <VideoInfo duration={video.duration} genres={video.genres} />
     </div>
   );
 };

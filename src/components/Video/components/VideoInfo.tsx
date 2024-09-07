@@ -9,11 +9,14 @@ import {
 import { OutlinedIcon } from "../../OutlinedIcon";
 import { Stack, Typography } from "../../atomic";
 
-type VideoInfoProps = {};
+type VideoInfoProps = {
+  duration: string;
+  genres: string[];
+};
 
-const VideoInfo: FC<VideoInfoProps> = () => {
+const VideoInfo: FC<VideoInfoProps> = ({ duration, genres }) => {
   return (
-    <Stack className="bg-[#141414] h-10vh opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 gap-3">
+    <Stack className="bg-[#141414] h-10vh opacity-1 group-hover:opacity-100 transition-opacity duration-300 p-4 gap-3">
       <Stack className="flex-row justify-between">
         <Stack className="flex-row gap-2">
           <OutlinedIcon>
@@ -33,15 +36,19 @@ const VideoInfo: FC<VideoInfoProps> = () => {
       </Stack>
       <Stack className="flex-row gap-2 align-center">
         <Typography variant="small">16</Typography>
-        <Typography variant="small">Limited Series</Typography>
+        <Typography variant="small">{duration}</Typography>
         <Typography variant="small">HD</Typography>
       </Stack>
-      <Stack className="flex-row gap-2  align-center">
-        <Typography variant="small">Action</Typography>
-        <Typography variant="small">Thriller</Typography>
-        <Typography variant="small">Fantasy</Typography>
+
+      <Stack className="flex-row flex-wrap gap-3">
+        {genres.map((genre) => (
+          <Typography key={genre} variant="small">
+            {genre}
+          </Typography>
+        ))}
       </Stack>
     </Stack>
   );
 };
+
 export default VideoInfo;
