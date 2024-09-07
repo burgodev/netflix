@@ -3,7 +3,7 @@ import { Video as VideoType } from "@/src/types/api";
 import { FC } from "react";
 import Image from "next/image";
 
-import { VideoInfo } from "./components";
+import { VideoInfo } from "./components/VideoInfo";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
