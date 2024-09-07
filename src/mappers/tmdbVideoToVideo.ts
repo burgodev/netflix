@@ -11,4 +11,6 @@ export const tmdbVideoToVideo = (tmdbVideo: TmdbVideo[]): Video[] =>
     image: video.poster_path,
     releaseData: video.release_date,
     rating: video.vote_average,
+    duration: "1h 49m",
+    genres: ["Action", "Adventure", "Comedy"],
   }));
