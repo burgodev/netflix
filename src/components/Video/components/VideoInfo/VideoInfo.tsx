@@ -9,11 +9,10 @@ import {
 import { OutlinedIcon } from "../../../OutlinedIcon";
 import { Stack, Typography } from "../../../atomic";
 import { Video } from "@/src/types/api";
-import { VideoAgeRating } from "../VideoAgeRating";
 
-type VideoInfoProps = Pick<Video, "duration" | "genres" | "ageRating">;
+type VideoInfoProps = Pick<Video, "duration" | "genres">;
 
-const VideoInfo: FC<VideoInfoProps> = ({ duration, genres, ageRating }) => {
+const VideoInfo: FC<VideoInfoProps> = ({ duration, genres }) => {
   return (
     <Stack className="bg-[#141414] h-10vh opacity-1 group-hover:opacity-100 transition-opacity duration-300 p-4 gap-3">
       {/* <Stack className="bg-[#141414] h-10vh opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 gap-3"> */}
