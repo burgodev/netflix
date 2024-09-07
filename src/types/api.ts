@@ -31,6 +31,8 @@ export type Video = {
   backgroundImage: string;
   releaseData: string;
   rating: number;
+  duration: string;
+  genres: string[];
 };
 
 // export type BaseEntity = {
