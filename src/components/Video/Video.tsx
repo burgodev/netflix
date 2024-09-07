@@ -13,7 +13,7 @@ type VideoProps = {
 
 const Video: FC<VideoProps> = ({ video }) => {
   return (
-    <div className="relative group opacity-90 transform transition-transform duration-300 hover:scale-150 hover:z-10 hover:opacity-100">
+    <div className="relative group opacity-90 transform transition-transform duration-300 hover:scale-150 hover:z-10 hover:opacity-100 hover:origin-left">
       <div className="relative w-full h-full min-w-[15vw] min-h-[10vw] flex-1">
         <Image
           className="rounded-[6px]"
