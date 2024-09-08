@@ -26,12 +26,12 @@ const config: Config = {
         "5xl": "3vw",
       },
       screens: {
-        xs: "480px",
+        xs: "0px",
         sm: "600px",
-        md: "768px",
-        lg: "1024px",
-        xl: "1280px",
-        xxl: "1440px",
+        md: "1024px",
+        lg: "1440px",
+        xl: "1920px",
+        xxl: "2560px",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
