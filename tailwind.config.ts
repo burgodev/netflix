@@ -12,13 +12,26 @@ const config: Config = {
       colors: {
         primary: "#E50914",
       },
+      // TODO: Fix font sizes
       fontSize: {
-        xs: "0.8rem",
-        sm: "0.9rem",
-        base: "1vw",
+        xxs: "0.5vw",
+        xs: "0.75vw",
+        sm: "1vw",
         md: "1.25vw",
         lg: "1.5vw",
-        xl: "2vw",
+        xl: "1.75vw",
+        "2xl": "2vw",
+        "3xl": "2.25vw",
+        "4xl": "2.5vw",
+        "5xl": "3vw",
+      },
+      screens: {
+        xs: "480px",
+        sm: "600px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        xxl: "1440px",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
