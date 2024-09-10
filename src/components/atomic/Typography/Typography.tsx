@@ -1,18 +1,11 @@
+import { cn } from "@/src/utils/cn";
 import React, { ElementType, memo } from "react";
 
-type Variant =
-  | "h1"
-  | "h2"
-  | "h3"
-  | "h4"
-  | "h5"
-  | "body"
-  | "body-small"
-  | "small";
+type Variant = "h1" | "h2" | "h3" | "h4" | "h5" | "span" | "p" | "body";
 
 interface Props {
-  variant: Variant;
-  children: React.ReactNode;
+  variant?: Variant;
+  children?: React.ReactNode;
   className?: string;
   as?: ElementType;
 }
@@ -23,9 +16,9 @@ const tags: Record<Variant, ElementType> = {
   h3: "h3",
   h4: "h4",
   h5: "h5",
+  span: "span",
+  p: "p",
   body: "p",
-  "body-small": "p",
-  small: "span",
 };
 
 const sizes: Record<Variant, string> = {
@@ -34,16 +27,16 @@ const sizes: Record<Variant, string> = {
   h3: "text-3xl font-bold sm:text-2xl",
   h4: "text-2xl font-bold sm:text-1xl",
   h5: "text-xl font-bold sm:text-lg",
-  body: "text-lg sm:text-md",
-  "body-small": "text-md sm:text-sm",
-  small: "text-sm sm:text-xs",
+  span: "text-xl sm:text-lg lg:text-md xl:text-sm 2xl:text-xs",
+  p: "text-4xl sm:text-2xl md:text-md lg:text-2xl xl:text-md xxl:text-sm",
+  body: "text-[1.2vw] xl:text-[0.96vw]",
 };
 
-const Typography = ({ variant, children, className, as }: Props) => {
+const Typography = ({ variant = "p", children, className, as }: Props) => {
   const sizeClasses = sizes[variant];
   const Tag = as || tags[variant];
 
-  return <Tag className={`${sizeClasses} ${className}`}>{children}</Tag>;
+  return <Tag className={cn(sizeClasses, className)}>{children}</Tag>;
 };
 
 export default memo(Typography);
