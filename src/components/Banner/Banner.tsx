@@ -1,13 +1,12 @@
 import Image from "next/image";
 import netflixBanner from "@/public/netflixbanner.jpg";
 import { Typography } from "../atomic/Typography";
-import { Button } from "../atomic";
+import { Button, Stack } from "../atomic";
 
 const Banner = () => {
   return (
-    <div className="relative h-[45vw]">
-      <div className="absolute inset-0">
-        {/* TODO: This image can probably be a background-image */}
+    <Stack className="relative h-[45vw] justify-center">
+      <div className="inset-0">
         <Image
           src={netflixBanner}
           layout="fill"
@@ -17,24 +16,20 @@ const Banner = () => {
           className="object-contain "
         />
       </div>
-      <div className="absolute flex flex-col pt-36 h-48 gap-4 max-w-[35vw]">
-        <h1 className="text-3xl font-extrabold pb-1">Narcos</h1>
+      <div className="relative flex flex-col pt-36 h-48 gap-4 w-[35.5vw] xl:w-[28.75vw] pl-[2.5vw]">
         <Typography variant="body">
-          Watch live on Sept. 2 as hot dog-eating champion Joey Chestnut faces
-          off against rival Takeru Kobayashi in the ultimate wiener-takes-all
-          competition.
+          Once upon a time, a scheming queen and a bloodthirsty dragon messed
+          with the wrong damsel. Millie Bobby Brown stars in this
+          edge-of-your-seat adventure.
         </Typography>
-        <div className="flex gap-3">
+
+        <Stack className="flex-row gap-3">
           <Button>Play</Button>
           <Button>More Info</Button>
-        </div>
-        {/* <h1 className="w-180 leading-6 pt-4 text-xs max-w-xs h-20"> */}
-        {/* {truncate(movie?.overview, 150)} */}
-
-        {/* </h1> */}
+        </Stack>
       </div>
       <div className="absolute bottom-0 w-full h-30 bg-gradient-to-b from-transparent to-black"></div>
-    </div>
+    </Stack>
   );
 };
 
