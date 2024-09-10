@@ -5,7 +5,7 @@ import { Button, Stack } from "../atomic";
 
 const Banner = () => {
   return (
-    <Stack className="relative h-[45vw] justify-center">
+    <Stack className="relative h-[50vh] md:h-[45vw] justify-center">
       <div className="inset-0">
         <Image
           src={netflixBanner}
