@@ -37,7 +37,7 @@ const Header = () => {
             : "bg-[linear-gradient(180deg,rgba(0,0,0,.7)_10%,transparent)]"
         )}
       >
-        <Stack className="gap-8">
+        <Stack className="gap-8 flex-row items-center">
           <Image
             className="object-contain"
             src={netflixLogo}
