@@ -10,8 +10,6 @@ import { usePathname } from "next/navigation";
 const Navigation = () => {
   const pathname = usePathname();
 
-  console.log("pathname", pathname);
-
   return (
     <ul className="flex gap-8 align-center h-fit">
       <li className="h-fit">
