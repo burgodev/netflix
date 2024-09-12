@@ -21,12 +21,9 @@ const useVideoQuery = ({ fetchUrl }: UseVideoQueryProps) => {
         }
 
         const json = await response.json();
-        const arr = tmdbVideoToVideo(json.results);
 
-        setVideos(arr);
+        setVideos(tmdbVideoToVideo(json.results));
         setLoading(false);
-
-        console.log(json);
       } catch (error) {
         console.error(error);
         setLoading(false);
