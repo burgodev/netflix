@@ -15,7 +15,7 @@ const VideoCategory: FC<VideoCategoryProps> = ({ title, fetchUrl }) => {
 
   return (
     <Stack className="gap-2 min-h-[25vh]">
-      <Typography variant="body">{title}</Typography>
+      <Typography variant="h2">{title}</Typography>
       <VideoList videos={videos} />
     </Stack>
   );
