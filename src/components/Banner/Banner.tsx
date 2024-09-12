@@ -1,14 +1,27 @@
+"use client";
+
 import Image from "next/image";
-import netflixBanner from "@/public/netflixbanner.jpg";
 import { Typography } from "../atomic/Typography";
 import { Button, Stack } from "../atomic";
+import { useVideoQuery } from "@/src/hooks";
+import requests from "@/src/api/requests";
+import { base_url } from "../Video/Video";
 
+// TODO: make this component dummy
 const Banner = () => {
+  const { videos, loading } = useVideoQuery({
+    fetchUrl: requests.fetchTopRated,
+  });
+
+  if (!videos.length) return null;
+
+  const { backgroundImage, overview } = videos[Math.floor(Math.random() * 20)];
+
   return (
     <Stack className="relative h-[50vh] md:h-[45vw] justify-center">
       <div className="inset-0">
         <Image
-          src={netflixBanner}
+          src={`${base_url}${backgroundImage}`}
           layout="fill"
           objectFit="cover"
           alt="Netflix Banner"
@@ -17,11 +30,7 @@ const Banner = () => {
         />
       </div>
       <div className="relative flex flex-col pt-36 h-48 gap-4 w-[35.5vw] xl:w-[28.75vw] pl-[2.5vw]">
-        <Typography variant="body">
-          Once upon a time, a scheming queen and a bloodthirsty dragon messed
-          with the wrong damsel. Millie Bobby Brown stars in this
-          edge-of-your-seat adventure.
-        </Typography>
+        <Typography variant="body">{overview}</Typography>
 
         <Stack className="flex-row gap-3">
           <Button>Play</Button>
