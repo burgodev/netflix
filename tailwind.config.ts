@@ -14,16 +14,17 @@ const config: Config = {
       },
       // TODO: Fix font sizes
       fontSize: {
+        base: "14px",
         xxs: "0.5vw",
         xs: "0.75vw",
-        sm: "1vw",
-        md: "1.25vw",
+        sm: "0.95vw",
+        md: "1.15vw",
         lg: "1.5vw",
         xl: "1.75vw",
         "2xl": "2vw",
-        "3xl": "2.25vw",
-        "4xl": "2.5vw",
-        "5xl": "3vw",
+        "3xl": "2.5vw",
+        "4xl": "3vw",
+        "5xl": "3.5vw",
       },
       screens: {
         xs: "0px",
