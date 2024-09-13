@@ -23,13 +23,13 @@ const tags: Record<Variant, ElementType> = {
 
 const sizes: Record<Variant, string> = {
   h1: "text-5xl font-bold sm:text-4xl",
-  h2: "text-4xl font-bold sm:text-3xl",
+  h2: "text-base md:text-[1.2vw] xl:text-[0.96vw]",
   h3: "text-3xl font-bold sm:text-2xl",
   h4: "text-2xl font-bold sm:text-1xl",
   h5: "text-xl font-bold sm:text-lg",
   span: "text-xl sm:text-lg lg:text-md xl:text-sm 2xl:text-xs",
   p: "text-4xl sm:text-2xl md:text-md lg:text-2xl xl:text-md xxl:text-sm",
-  body: "text-[1.2vw] xl:text-[0.96vw]",
+  body: "text-base md:text-[1.2vw] xl:text-[0.96vw]",
 };
 
 const Typography = ({ variant = "p", children, className, as }: Props) => {
