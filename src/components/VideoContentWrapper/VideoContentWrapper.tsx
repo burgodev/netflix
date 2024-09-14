@@ -7,7 +7,7 @@ type VideoCategoryProps = {};
 
 const VideoContentWrapper: FC<VideoCategoryProps> = () => {
   return (
-    <Stack className="translate-y-[-10vh] pl-[2.5vw] w-screen gap-[5vh]">
+    <Stack className="pl-[2.5vw] w-screen gap-[5vh]">
       {VIDEO_CATEGORY_MOCK.map(({ id, title, fetchUrl }) => (
         <VideoCategory key={id} title={title} fetchUrl={fetchUrl} />
       ))}
