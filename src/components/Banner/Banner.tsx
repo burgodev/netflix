@@ -18,17 +18,16 @@ const Banner = () => {
   const { backgroundImage, overview } = videos[Math.floor(Math.random() * 20)];
 
   return (
-    <Stack className="relative h-[50vh] md:h-[45vw] justify-center">
-      <div className="inset-0">
-        <Image
-          src={`${base_url}${backgroundImage}`}
-          layout="fill"
-          objectFit="cover"
-          alt="Netflix Banner"
-          objectPosition="top"
-          className="object-contain "
-        />
-      </div>
+    <Stack className="relative w-screen h-[50vh] md:h-[45vw] justify-center">
+      <Image
+        src={`${base_url}${backgroundImage}`}
+        layout="fill"
+        objectFit="cover"
+        alt="Netflix Banner"
+        objectPosition="top"
+        className="object-contain"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent h-3/4 bottom-0 mt-auto"></div>
       <div className="relative flex flex-col pt-36 h-48 gap-4 w-[35.5vw] xl:w-[28.75vw] pl-[2.5vw]">
         <Typography variant="body">{overview}</Typography>
 
@@ -37,7 +36,6 @@ const Banner = () => {
           <Button>More Info</Button>
         </Stack>
       </div>
-      <div className="absolute bottom-0 w-full h-30 bg-gradient-to-b from-transparent to-black"></div>
     </Stack>
   );
 };
