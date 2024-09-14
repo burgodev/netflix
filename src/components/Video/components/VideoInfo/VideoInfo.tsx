@@ -10,11 +10,17 @@ import { OutlinedIcon } from "../../../OutlinedIcon";
 import { Stack, Typography } from "../../../atomic";
 import { Video } from "@/src/types/api";
 
-type VideoInfoProps = Pick<Video, "duration" | "genres">;
+type VideoInfoProps = Pick<Video, "duration" | "genres"> & {
+  display: boolean;
+};
 
-const VideoInfo: FC<VideoInfoProps> = ({ duration, genres }) => {
+const VideoInfo: FC<VideoInfoProps> = ({ duration, genres, display }) => {
   return (
-    <Stack className="bg-[#141414] h-10vh opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 gap-3">
+    <Stack
+      className={`bg-[#141414] h-10vh transition-opacity duration-300 p-4 gap-3 ${
+        display ? "opacity-100" : "opacity-0"
+      }`}
+    >
       <Stack className="flex-row justify-between">
         <Stack className="flex-row gap-2">
           <OutlinedIcon>
