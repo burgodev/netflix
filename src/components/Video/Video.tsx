@@ -45,15 +45,14 @@ const Video: FC<VideoProps> = ({ video, hoverAlign = "center" }) => {
           src={`${base_url}${video.backgroundImage}`}
         />
       </div>
-      
 
-      
-
-      <VideoInfo
-        duration={video.duration}
-        genres={video.genres}
-        display={isHovered}
-      />
+      {isHovered && (
+        <VideoInfo
+          duration={video.duration}
+          genres={video.genres}
+          display={isHovered}
+        />
+      )}
     </div>
   );
 };
