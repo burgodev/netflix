@@ -36,7 +36,7 @@ const Video: FC<VideoProps> = ({ video, hoverAlign = "center" }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="w-full h-full min-w-[15vw] flex-1">
+      <div className="w-full h-full min-w-[15vw] bg-black">
         <Image
           className="rounded-[6px]"
           objectFit="cover"
