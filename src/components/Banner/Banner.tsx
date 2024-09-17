@@ -18,7 +18,7 @@ const Banner = () => {
   const { backgroundImage, overview } = videos[Math.floor(Math.random() * 20)];
 
   return (
-    <Stack className="relative w-screen h-[50vh] xl:h-[35vw] justify-center">
+    <Stack className="relative w-screen h-[60vh] lg:h-[50vw] xl:h-[45vw] xxl:h-[40vw] justify-center">
       <Image
         src={`${base_url}${backgroundImage}`}
         layout="fill"
