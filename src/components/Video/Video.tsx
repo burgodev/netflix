@@ -7,10 +7,10 @@ export const base_url = "https://image.tmdb.org/t/p/original/"; // todo: remove 
 
 type VideoProps = {
   video: VideoType;
-  hoverAlign: "left" | "center"; // todo
+  hoverAlign?: "left" | "center";
 };
 
-const Video: FC<VideoProps> = ({ video }) => {
+const Video: FC<VideoProps> = ({ video, hoverAlign = "center" }) => {
   const [isHovered, setIsHovered] = useState(false);
   const hoverTimeout = useRef<NodeJS.Timeout | null>(null);
 
@@ -31,8 +31,8 @@ const Video: FC<VideoProps> = ({ video }) => {
   return (
     <div
       className={`relative h-[20vh] w-[15vw] group transform transition-transform duration-300 ${
-        isHovered ? "opacity-100 scale-125 z-10  cursor-pointer" : "opacity-75"
-      }`}
+        isHovered ? "opacity-100 scale-125 z-10 cursor-pointer" : "opacity-75"
+      } ${hoverAlign === "left" ? "origin-left" : ""}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -45,6 +45,9 @@ const Video: FC<VideoProps> = ({ video }) => {
           src={`${base_url}${video.backgroundImage}`}
         />
       </div>
+      
+
+      
 
       <VideoInfo
         duration={video.duration}

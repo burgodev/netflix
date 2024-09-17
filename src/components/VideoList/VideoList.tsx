@@ -12,10 +12,12 @@ type VideoListProps = {
 const VideoList: FC<VideoListProps> = ({ videos }) => {
   return (
     <Stack className="overflow-visible flex-row gap-2 translate-y--5vh cursor-pointer">
-      {videos.map((video) => (
-        <div key={video.id}>
-          <Video video={video} />
-        </div>
+      {videos.map((video, i) => (
+        <Video
+          video={video}
+          hoverAlign={i === 0 ? "left" : "center"}
+          key={video.id}
+        />
       ))}
     </Stack>
   );
