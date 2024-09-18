@@ -1,5 +1,7 @@
 import { Media, TmdbVideo, Video } from "../types/api";
 
+export const baseUrl = "https://image.tmdb.org/t/p/original/";
+
 // The Movie Database API to Video Mapper
 export const tmdbVideoToVideo = (tmdbVideo: TmdbVideo[]): Video[] =>
   tmdbVideo.map((video) => ({
@@ -7,7 +9,7 @@ export const tmdbVideoToVideo = (tmdbVideo: TmdbVideo[]): Video[] =>
     title: video.title,
     overview: video.overview,
     mediaType: video.media_type as Media,
-    backgroundImage: video.backdrop_path,
+    backgroundImage: `${baseUrl}${video.backdrop_path}`,
     image: video.poster_path,
     releaseData: video.release_date,
     rating: video.vote_average,
