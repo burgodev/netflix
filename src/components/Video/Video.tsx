@@ -1,9 +1,10 @@
+"use client";
+
 import { Video as VideoType } from "@/src/types/api";
 import { FC, useState, useRef } from "react";
 import Image from "next/image";
 import { VideoInfo } from "./components/VideoInfo";
-
-export const base_url = "https://image.tmdb.org/t/p/original/"; // todo: remove this from here
+import { baseUrl } from "@/src/mappers/tmdbVideoToVideo";
 
 type VideoProps = {
   video: VideoType;
@@ -42,7 +43,7 @@ const Video: FC<VideoProps> = ({ video, hoverAlign = "center" }) => {
           objectFit="cover"
           layout="fill"
           alt={video.title}
-          src={`${base_url}${video.backgroundImage}`}
+          src={`${baseUrl}${video.backgroundImage}`}
         />
       </div>
 
