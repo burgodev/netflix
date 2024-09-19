@@ -13,7 +13,7 @@ const Banner = ({ videos }: BannerProps) => {
   const { backgroundImage, overview } = videos[randomIndex];
 
   return (
-    <Stack className="relative w-screen h-[50vh] md:h-[45vw] lg:h-[40vw] justify-end">
+    <Stack className="relative w-screen h-[60vh] sm:h-[75vh] md:h-[60vw] lg:h-[50vw] xl:h-[40vw] justify-end">
       <Image
         src={backgroundImage}
         layout="fill"
