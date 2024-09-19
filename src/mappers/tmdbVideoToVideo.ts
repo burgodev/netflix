@@ -1,6 +1,5 @@
+import { baseUrl } from "../consts/tmdb";
 import { Media, TmdbVideo, Video } from "../types/api";
-
-export const baseUrl = "https://image.tmdb.org/t/p/original/";
 
 // The Movie Database API to Video Mapper
 export const tmdbVideoToVideo = (tmdbVideo: TmdbVideo[]): Video[] =>
