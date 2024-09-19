@@ -26,7 +26,6 @@ const Banner = ({ videos }: BannerProps) => {
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent h-[65%] mt-auto" />
       <div className="relative flex flex-col pt-36 h-48 gap-4 w-[35.5vw] xl:w-[28.75vw] pl-[2.5vw]">
         <Typography variant="body">{overview}</Typography>
-
         <Stack className="flex-row gap-3">
           <Button>Play</Button>
           <Button>More Info</Button>
