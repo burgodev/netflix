@@ -4,7 +4,6 @@ import { Video as VideoType } from "@/src/types/api";
 import { FC, useState, useRef } from "react";
 import Image from "next/image";
 import { VideoInfo } from "./components/VideoInfo";
-import { baseUrl } from "@/src/mappers/tmdbVideoToVideo";
 
 type VideoProps = {
   video: VideoType;
@@ -40,10 +39,9 @@ const Video: FC<VideoProps> = ({ video, hoverAlign = "center" }) => {
       <div className="w-full h-full min-w-[15vw] bg-black">
         <Image
           className="rounded-[6px]"
-          objectFit="cover"
           layout="fill"
           alt={video.title}
-          src={`${baseUrl}${video.backgroundImage}`}
+          src={video.backgroundImage}
         />
       </div>
 
