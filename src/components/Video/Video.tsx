@@ -38,6 +38,7 @@ const Video: FC<VideoProps> = ({ video, hoverAlign = "center" }) => {
     >
       <div className="w-full h-full min-w-[15vw] bg-black">
         <Image
+          objectFit="cover"
           className="rounded-[6px]"
           layout="fill"
           alt={video.title}
