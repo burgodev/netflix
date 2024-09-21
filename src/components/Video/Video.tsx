@@ -30,7 +30,7 @@ const Video: FC<VideoProps> = ({ video, hoverAlign = "center" }) => {
 
   return (
     <div
-      className={`relative  h-[20vh] min-w-[30vw] sm:min-w-[22.25vw] md:min-w-[18.25vw] lg:min-w-[15.25vw] group transform transition-all duration-300 ${
+      className={`relative h-[20vh] min-w-[30vw] sm:min-w-[22.25vw] md:min-w-[18.25vw] lg:min-w-[15.25vw] group transform transition-all duration-300 ${
         isHovered ? "opacity-100 scale-150 z-10 cursor-pointer" : "opacity-75"
       } ${hoverAlign === "left" ? "origin-left" : "origin-center"}`}
       onMouseEnter={handleMouseEnter}
