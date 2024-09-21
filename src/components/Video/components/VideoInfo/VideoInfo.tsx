@@ -17,25 +17,25 @@ type VideoInfoProps = Pick<Video, "duration" | "genres"> & {
 const VideoInfo: FC<VideoInfoProps> = ({ duration, genres, display }) => {
   return (
     <Stack
-      className={`bg-[#141414] h-10vh transition-opacity duration-300 p-4 gap-3 border-radius rounded-[6px]${
+      className={`bg-[#141414] transition-opacity duration-300 p-4 gap-1 md:gap-2 lg:gap-3 border-radius rounded-[6px]${
         display ? "opacity-100" : "opacity-0"
       }`}
     >
       <Stack className="flex-row justify-between">
-        <Stack className="flex-row gap-2">
+        <Stack className="flex-row gap-1 lg:gap-2">
           <OutlinedIcon>
-            <PlayIcon className="h-6 w-6 text-white" />
+            <PlayIcon className="h-[2vw] w-[2vw] md:h-[1vw] md:w-[1vw] text-white" />
           </OutlinedIcon>
           <OutlinedIcon>
-            <PlusIcon className="h-6 w-6 text-white" />
+            <PlusIcon className="h-[2vw] w-[2vw] md:h-[1vw] md:w-[1vw] text-white" />
           </OutlinedIcon>
           <OutlinedIcon>
-            <HandThumbUpIcon className="h-6 w-6 text-white" />
+            <HandThumbUpIcon className="h-[2vw] w-[2vw] md:h-[1vw] md:w-[1vw] text-white" />
           </OutlinedIcon>
         </Stack>
 
         <OutlinedIcon>
-          <ChevronDownIcon className="h-6 w-6 text-white" />
+          <ChevronDownIcon className="h-[2vw] w-[2vw] md:h-[1vw] md:w-[1vw] text-white" />
         </OutlinedIcon>
       </Stack>
       <Stack className="flex-row gap-2 align-center">
