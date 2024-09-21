@@ -5,13 +5,15 @@ import { Banner } from "@/src/components/Banner";
 import { VideoContentWrapper } from "@/src/components/VideoContentWrapper";
 import { auth } from "@clerk/nextjs/server";
 
+const randomIndex = Math.floor(Math.random() * 20);
+
 const Home = async () => {
   const videos = await fetchVideos({ url: requests.fetchTopRated });
   auth().protect();
 
   return (
     <Stack>
-      <Banner videos={videos} />
+      <Banner video={videos[randomIndex]} />
       <VideoContentWrapper />
     </Stack>
   );

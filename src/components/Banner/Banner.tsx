@@ -4,13 +4,11 @@ import { Button, Stack } from "../atomic";
 import { Video } from "@/src/types/api";
 
 type BannerProps = {
-  videos: Video[];
+  video: Video;
 };
 
-const randomIndex = Math.floor(Math.random() * 20);
-
-const Banner = ({ videos }: BannerProps) => {
-  const { backgroundImage, overview } = videos[randomIndex];
+const Banner = ({ video }: BannerProps) => {
+  const { backgroundImage, overview } = video;
 
   return (
     <Stack className="relative w-screen h-[65vh] sm:h-[75vh] md:h-[60vw] lg:h-[55vw] xl:h-[40vw] xxl:h-[40vw] justify-end">
