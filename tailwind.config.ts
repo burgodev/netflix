@@ -12,6 +12,9 @@ const config: Config = {
       colors: {
         primary: "#E50914",
       },
+      scale: {
+        "200": "2",
+      },
       // TODO: Fix font sizes
       fontSize: {
         smallBase: "14px",
