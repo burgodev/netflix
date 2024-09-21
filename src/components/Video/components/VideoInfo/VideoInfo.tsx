@@ -24,18 +24,18 @@ const VideoInfo: FC<VideoInfoProps> = ({ duration, genres, display }) => {
       <Stack className="flex-row justify-between">
         <Stack className="flex-row gap-1 lg:gap-2">
           <OutlinedIcon>
-            <PlayIcon className="h-[2vw] w-[2vw] md:h-[1vw] md:w-[1vw] text-white" />
+            <PlayIcon className="h-[2vw] w-[2vw] md:h-[1vw] md:w-[1vw] xl:h-[0.75vw] xl:w-[0.75vw] text-white" />
           </OutlinedIcon>
           <OutlinedIcon>
-            <PlusIcon className="h-[2vw] w-[2vw] md:h-[1vw] md:w-[1vw] text-white" />
+            <PlusIcon className="h-[2vw] w-[2vw] md:h-[1vw] md:w-[1vw] xl:h-[0.75vw] xl:w-[0.75vw] text-white" />
           </OutlinedIcon>
           <OutlinedIcon>
-            <HandThumbUpIcon className="h-[2vw] w-[2vw] md:h-[1vw] md:w-[1vw] text-white" />
+            <HandThumbUpIcon className="h-[2vw] w-[2vw] md:h-[1vw] md:w-[1vw] xl:h-[0.75vw] xl:w-[0.75vw] text-white" />
           </OutlinedIcon>
         </Stack>
 
         <OutlinedIcon>
-          <ChevronDownIcon className="h-[2vw] w-[2vw] md:h-[1vw] md:w-[1vw] text-white" />
+          <ChevronDownIcon className="h-[2vw] w-[2vw] md:h-[1vw] md:w-[1vw] xl:h-[0.75vw] xl:w-[0.75vw] text-white" />
         </OutlinedIcon>
       </Stack>
       <Stack className="flex-row gap-2 align-center">
