@@ -20,7 +20,7 @@ export default function Login() {
           Ready to watch? Enter your email to create or restart your membership.
         </h3>
         <SignInButton>
-          <button className="py-4 px-16 bg-primary rounded-[6px] font-semibold text-2xl">
+          <button className="py-4 px-16 bg-primary rounded-[6px] font-semibold text-md">
             Get Started
           </button>
         </SignInButton>
