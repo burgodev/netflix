@@ -14,7 +14,8 @@ const config: Config = {
       },
       // TODO: Fix font sizes
       fontSize: {
-        base: "14px",
+        smallBase: "14px",
+        base: "16px",
         xxs: "0.5vw",
         xs: "0.75vw",
         sm: "0.95vw",
