@@ -9,7 +9,7 @@ type VideoListProps = {
 
 const VideoList: FC<VideoListProps> = ({ videos }) => {
   return (
-    <Stack className="overflow-visible flex-row gap-2 translate-y--5vh cursor-pointer">
+    <Stack className="overflow-visible flex-row gap-2 cursor-pointer">
       {videos.map((video, i) => (
         <Video
           video={video}
