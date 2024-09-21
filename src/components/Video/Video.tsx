@@ -30,16 +30,15 @@ const Video: FC<VideoProps> = ({ video, hoverAlign = "center" }) => {
 
   return (
     <div
-      className={`relative h-[20vh] w-[15vw] group transform transition-transform duration-300 ${
-        isHovered ? "opacity-100 scale-125 z-10 cursor-pointer" : "opacity-75"
-      } ${hoverAlign === "left" ? "origin-left" : ""}`}
+      className={`relative h-[20vh] min-w-[15vw] group transform transition-transform duration-300 ${
+        isHovered ? "opacity-100 scale-150 z-10 cursor-pointer" : "opacity-75"
+      } ${hoverAlign === "left" ? "origin-left" : "origin-center"}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="w-full h-full min-w-[15vw] bg-black">
+      <div className="w-full h-full min-w-[15vw]">
         <Image
           objectFit="cover"
-          className="rounded-[6px]"
           layout="fill"
           alt={video.title}
           src={video.backgroundImage}
