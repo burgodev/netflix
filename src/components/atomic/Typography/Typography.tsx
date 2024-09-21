@@ -27,9 +27,9 @@ const sizes: Record<Variant, string> = {
   h3: "text-3xl font-bold sm:text-2xl",
   h4: "text-2xl font-bold sm:text-1xl",
   h5: "text-xl font-bold sm:text-lg",
-  span: "text-xl sm:text-lg lg:text-md xl:text-sm 2xl:text-xs",
+  span: "text-smallBase sm:text-base ",
   p: "text-4xl sm:text-2xl md:text-md lg:text-2xl xl:text-md xxl:text-sm",
-  body: "text-base md:text-[1.2vw] xl:text-[0.96vw]",
+  body: "text-smallBase md:text-[1.2vw] xl:text-[0.96vw]",
 };
 
 const Typography = ({ variant = "p", children, className, as }: Props) => {
