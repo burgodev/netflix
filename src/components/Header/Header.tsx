@@ -1,6 +1,6 @@
 "use client";
 
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+// import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import netflixLogo from "@/public/netflixlogo.png";
 import { Stack } from "../atomic";
@@ -47,14 +47,16 @@ const Header = () => {
           <Navigation />
         </Stack>
 
-        <SignedOut>
+        <div></div>
+
+        {/* <SignedOut>
           <div className="bg-primary py-3 px-5 rounded-[6px] font-semibold">
             <SignInButton />
           </div>
         </SignedOut>
         <SignedIn>
           <UserButton />
-        </SignedIn>
+        </SignedIn> */}
       </div>
     </header>
   );

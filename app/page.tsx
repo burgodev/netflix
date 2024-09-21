@@ -1,6 +1,6 @@
 import Image from "next/image";
 import BackgroundImage from "../src/assets/background.jpg";
-import { SignInButton } from "@clerk/nextjs";
+// import { SignInButton } from "@clerk/nextjs";
 
 export default function Login() {
   return (
@@ -19,11 +19,11 @@ export default function Login() {
         <h3 className="mb-2 mt-4">
           Ready to watch? Enter your email to create or restart your membership.
         </h3>
-        <SignInButton>
-          <button className="py-4 px-16 bg-primary rounded-[6px] font-semibold text-md">
-            Get Started
-          </button>
-        </SignInButton>
+        {/* <SignInButton> */}
+        <button className="py-4 px-16 bg-primary rounded-[6px] font-semibold text-md">
+          Get Started
+        </button>
+        {/* </SignInButton> */}
       </div>
     </div>
   );
