@@ -4,6 +4,7 @@ import { Video as VideoType } from "@/src/types/api";
 import { FC, useState, useRef } from "react";
 import Image from "next/image";
 import { VideoInfo } from "./components/VideoInfo";
+import { useRouter } from "next/navigation";
 
 type VideoProps = {
   video: VideoType;
@@ -11,6 +12,7 @@ type VideoProps = {
 };
 
 const Video: FC<VideoProps> = ({ video, hoverAlign = "center" }) => {
+  const router = useRouter();
   const [isHovered, setIsHovered] = useState(false);
   const hoverTimeout = useRef<NodeJS.Timeout | null>(null);
 
@@ -28,8 +30,13 @@ const Video: FC<VideoProps> = ({ video, hoverAlign = "center" }) => {
     setIsHovered(false);
   };
 
+  const onClick = () => {
+    router.push("/videos");
+  };
+
   return (
     <div
+      onClick={onClick}
       className={`relative h-[20vh] min-w-[30vw] sm:min-w-[22.25vw] md:min-w-[18.25vw] lg:min-w-[15.25vw] group transform transition-all duration-300 ${
         isHovered ? "opacity-100 scale-150 z-10 cursor-pointer" : "opacity-75"
       } ${hoverAlign === "left" ? "origin-left" : "origin-center"}`}
