@@ -31,7 +31,7 @@ const Video: FC<VideoProps> = ({ video, hoverAlign = "center" }) => {
   };
 
   const onClick = () => {
-    router.push("/videos");
+    router.push("/watch");
   };
 
   return (
@@ -43,11 +43,12 @@ const Video: FC<VideoProps> = ({ video, hoverAlign = "center" }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="w-full h-full min-w-[15vw]">
+      <div className="relative w-full h-full min-w-[15vw]">
         <Image
-          objectFit="cover"
-          layout="fill"
-          alt={video.title}
+          sizes="(max-width: 768px) 30vw, (max-width: 1200px) 18.25, (max-width: 1400px) 15.25, 30vw"
+          className="object-cover"
+          fill
+          alt={`${video.title}`}
           src={video.backgroundImage}
         />
       </div>
