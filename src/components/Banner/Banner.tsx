@@ -26,10 +26,10 @@ const Banner = ({ video }: BannerProps) => {
       <div className="relative flex flex-col gap-4 w-[80vw] sm:w-[60vw] md:w-[50vw] xl:w-[35vw] xxl-[25vw] p-[16px] md:p-[2.5vw] md:pb-[5vw] ">
         <Typography variant="body">{overview}</Typography>
         <Stack className="flex-row gap-3">
-          <Button className="text-[2vw] sm:text-[1.5vw] md:text-[1.5vw] lg:text-[1vw] xl:px-[2.5vw] xl:py-[0.5vw]">
+          <Button className="text-[2vw] sm:text-[1.5vw] md:text-[1.5vw] lg:text-[1vw] xl:text-[0.75vw] xl:px-[2vw] xl:py-[0.4vw]">
             Play
           </Button>
-          <Button className="text-[2vw] sm:text-[1.5vw] md:text-[1.5vw] lg:text-[1vw] xl:px-[2.5vw] xl:py-[0.5vw]">
+          <Button className="text-[2vw] sm:text-[1.5vw] md:text-[1.5vw] lg:text-[1vw] xl:text-[0.75vw] xl:px-[2vw] xl:py-[0.4vw]">
             More Info
           </Button>
         </Stack>
