@@ -7,10 +7,9 @@ export default function Login() {
     <div className="h-[92vh] flex align-center justify-center">
       <Image
         src={BackgroundImage}
-        layout="fill"
-        objectFit="cover"
+        fill
         alt="A list of really cool movies that you can watch on netflix"
-        className="relative h-screen z-[-1] opacity-50"
+        className="relative h-screen z-[-1] opacity-50 object-cover"
       />
 
       <div className="flex flex-col items-center justify-center m-auto gap-4">
