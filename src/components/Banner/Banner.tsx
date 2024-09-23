@@ -14,11 +14,10 @@ const Banner = ({ video }: BannerProps) => {
     <Stack className="relative w-screen h-[65vh] sm:h-[75vh] md:h-[60vw] lg:h-[55vw] xl:h-[40vw] xxl:h-[40vw] justify-end">
       <Image
         src={backgroundImage}
-        layout="fill"
-        objectFit="cover"
         alt="Netflix Banner"
-        objectPosition="top"
-        className="object-contain"
+        fill
+        className="object-cover"
+        priority
       />
       {/* Image overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent h-[65%] mt-auto" />
