@@ -3,7 +3,7 @@
 // import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import netflixLogo from "@/public/netflixlogo.png";
-import { Stack } from "../atomic";
+import { Stack, Typography } from "../atomic";
 import { Navigation } from "../Navigation";
 import { useEffect, useState } from "react";
 import { cn } from "@/src/utils/cn";
@@ -29,7 +29,13 @@ const Footer = () => {
     };
   }, []);
 
-  return <footer className="bg-black z-10 h-[35vh] w-screen"></footer>;
+  return (
+    <footer className="bg-black z-10 h-[35vh] w-screen flex items-end justify-center align-bottom pb-[24px]">
+      <Typography variant="span" className="text-[#9b9b9b]">
+        @2024 by burgodev
+      </Typography>
+    </footer>
+  );
 };
 
 export default Footer;
