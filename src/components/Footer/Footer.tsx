@@ -1,17 +1,12 @@
 "use client";
 
-// import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import Image from "next/image";
-import netflixLogo from "@/public/netflixlogo.png";
-import { Stack, Typography } from "../atomic";
-import { Navigation } from "../Navigation";
+import { Typography } from "../atomic";
 import { useEffect, useState } from "react";
-import { cn } from "@/src/utils/cn";
-import facebook from "@/src/assets/facebook.svg";
 
-const FacebookIcon = () => facebook;
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -29,8 +24,10 @@ const Footer = () => {
     };
   }, []);
 
+  if (pathname === "/") return null;
+
   return (
-    <footer className="bg-black z-10 h-[35vh] w-screen flex items-end justify-center align-bottom pb-[24px]">
+    <footer className="bg-black z-10 h-[35vh] w-screen flex items-end justify-center align-bottom pb-[24px] mt-[10vh]">
       <Typography variant="span" className="text-[#9b9b9b]">
         @2024 by burgodev
       </Typography>

@@ -7,8 +7,10 @@ import { Stack } from "../atomic";
 import { Navigation } from "../Navigation";
 import { useEffect, useState } from "react";
 import { cn } from "@/src/utils/cn";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -25,6 +27,8 @@ const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  if (pathname === "/") return null;
 
   return (
     <header className="fixed z-10 w-screen">

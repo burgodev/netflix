@@ -15,7 +15,7 @@ export default function RootLayout({
       {/* <ClerkProvider> */}
       <body>
         <Header />
-        <main className="min-h-[calc(100vh-85px)] flex flex-col items-center overflow-hidden pb-[10vh]">
+        <main className="min-h-[calc(100vh-85px)] flex flex-col items-center overflow-hidden">
           {children}
         </main>
         <Footer />
