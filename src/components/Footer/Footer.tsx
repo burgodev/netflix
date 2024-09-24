@@ -27,7 +27,7 @@ const Footer = () => {
   if (pathname === "/") return null;
 
   return (
-    <footer className="bg-black z-10 h-[35vh] w-screen flex items-end justify-center align-bottom pb-[24px] mt-[10vh]">
+    <footer className="bg-black z-10 h-[35vh] w-screen flex items-end justify-center align-bottom pb-[24px]">
       <Typography variant="span" className="text-[#9b9b9b]">
         @2024 by burgodev
       </Typography>
