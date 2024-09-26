@@ -4,23 +4,15 @@ import { FC, useState } from "react";
 import { Stack } from "../atomic";
 import { Video } from "../Video";
 import { Video as VideoType } from "@/src/types/api";
+import { useVideoListNavigation } from "./hooks";
 
 type VideoListProps = {
   videos: VideoType[];
 };
 
 const VideoList: FC<VideoListProps> = ({ videos }) => {
-  const [translateX, setTranslateX] = useState(0);
-
-  const handleScrollLeft = () => {
-    setTranslateX((prev) => Math.min(prev + 95, 0)); // Adjust the value as needed
-  };
-
-  const handleScrollRight = () => {
-    setTranslateX((prev) => prev - 95); // Adjust the value as needed
-  };
-
-  console.log("translateX", translateX);
+  const { handleScrollLeft, handleScrollRight, translateX } =
+    useVideoListNavigation();
 
   return (
     <div className="relative">
