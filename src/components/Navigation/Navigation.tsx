@@ -16,7 +16,7 @@ const Navigation = () => {
         <Link
           href="/home"
           className={cn(
-            pathname === "/home" ? "font-medium" : "text-[#e5e5e5]" // TODO: theme
+            pathname === "/home" ? "font-medium" : "text-subtext" // TODO: theme
           )}
         >
           Home
@@ -26,7 +26,7 @@ const Navigation = () => {
         <Link
           href="/tv-shows"
           className={cn(
-            pathname === "/tv-shows" ? "font-medium" : "text-[#e5e5e5]"
+            pathname === "/tv-shows" ? "font-medium" : "text-subtext"
           )}
         >
           Tv Shows
@@ -36,7 +36,7 @@ const Navigation = () => {
         <Link
           href="/movies"
           className={cn(
-            pathname === "/movies" ? "font-medium" : "text-[#e5e5e5]"
+            pathname === "/movies" ? "font-medium" : "text-subtext"
           )}
         >
           Movies
@@ -46,7 +46,7 @@ const Navigation = () => {
         <Link
           href="/my-list"
           className={cn(
-            pathname === "/my-list" ? "font-medium" : "text-[#e5e5e5]"
+            pathname === "/my-list" ? "font-medium" : "text-subtext"
           )}
         >
           My List
