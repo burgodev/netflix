@@ -28,6 +28,13 @@ const Header = () => {
     };
   }, []);
 
+  const handleLogoClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   if (pathname === "/") return null;
 
   return (
@@ -43,7 +50,8 @@ const Header = () => {
       >
         <Stack className="gap-8 flex-row items-center">
           <Image
-            className="object-contain"
+            onClick={handleLogoClick}
+            className="object-contain cursor-pointer"
             src={netflixLogo}
             alt="Netflix logo"
             width={120}
