@@ -31,7 +31,7 @@ const Video: FC<VideoProps> = ({ video, hoverAlign = "center" }) => {
   };
 
   const onClick = () => {
-    router.push("/watch");
+    router.push(`/watch/${video.id}`);
   };
 
   return (
