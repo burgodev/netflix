@@ -17,7 +17,7 @@ type VideoInfoProps = Pick<Video, "duration" | "genres"> & {
 const VideoInfo: FC<VideoInfoProps> = ({ duration, genres, display }) => {
   return (
     <Stack
-      className={`bg-[#141414] rounded-b-[8px] transition-opacity duration-300 p-2 sm:p-3 lg:p-4 gap-1 md:gap-2 lg:gap-3 border-radius rounded-[6px]${
+      className={`bg-background rounded-b-[8px] transition-opacity duration-300 p-2 sm:p-3 lg:p-4 gap-1 md:gap-2 lg:gap-3 border-radius rounded-[6px]${
         display ? "opacity-100" : "opacity-0"
       }`}
     >
@@ -39,7 +39,7 @@ const VideoInfo: FC<VideoInfoProps> = ({ duration, genres, display }) => {
         </OutlinedIcon>
       </Stack>
       <Stack className="flex-row gap-2 align-center">
-        <Typography variant="span" className="text-[#BCBCBC]">
+        <Typography variant="span" className="text-secondary">
           {duration}
         </Typography>
       </Stack>
