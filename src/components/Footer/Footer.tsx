@@ -28,7 +28,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-black z-10 h-[35vh] w-screen flex items-end justify-center align-bottom pb-[24px]">
-      <Typography variant="span" className="text-[#9b9b9b]">
+      <Typography variant="span" className="text-subtext">
         @2024 by burgodev
       </Typography>
     </footer>
