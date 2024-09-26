@@ -11,6 +11,9 @@ const config: Config = {
     extend: {
       colors: {
         primary: "#E50914",
+        secondary: "#BCBCBC",
+        subtext: "#e5e5e5",
+        background: "#141414",
       },
       scale: {
         "200": "2",
