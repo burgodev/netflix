@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC } from "react";
 import { Stack } from "../atomic";
 import { Video } from "../Video";
 import { Video as VideoType } from "@/src/types/api";
