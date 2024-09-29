@@ -24,7 +24,7 @@ const Footer = () => {
     };
   }, []);
 
-  if (pathname === "/") return null;
+  if (pathname !== "/home") return null;
 
   return (
     <footer className="bg-black z-10 h-[35vh] w-[100%] flex items-end justify-center align-bottom pb-[24px]">
