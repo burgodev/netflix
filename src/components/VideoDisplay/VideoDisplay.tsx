@@ -36,7 +36,7 @@ const VideoDisplay = () => {
 
   return (
     <Stack className="gap-4 h-screen w-screen">
-      <Button onClick={getVimeoAccessToken}>get token</Button>
+      <Button onClick={() => getVimeoAccessToken()}>get token</Button>
       {/* <Button onClick={fetchVideo}>fetch video</Button> */}
       {/* <Button onClick={fetchVideos}>fetch VIDEOS LIST</Button> */}
       {/* TODO: Image */}

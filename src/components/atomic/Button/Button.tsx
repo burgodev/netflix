@@ -4,6 +4,7 @@ import { memo } from "react";
 type StackProps = {
   className?: string;
   children: React.ReactNode;
+  onClick?: () => void;
 };
 
 const Button = ({ children, className, ...props }: StackProps) => {
