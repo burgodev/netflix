@@ -11,7 +11,7 @@ const Navigation = () => {
   const pathname = usePathname();
 
   return (
-    <ul className="flex gap-8 align-center h-fit">
+    <ul className="hidden sm:flex gap-8 align-center h-fit">
       <li className="h-fit">
         <Link
           href="/home"
