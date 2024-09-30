@@ -1,27 +1,19 @@
-import { fetchVideos } from "@/src/api/fetchVideos";
-import requests from "@/src/api/requests";
-import { getVimeoVideos } from "@/src/api/vimeo";
-import { Stack } from "@/src/components";
-import { Banner } from "@/src/components/Banner";
-import { VideoContentWrapper } from "@/src/components/VideoContentWrapper";
+"use client";
+
+import { fetchVimeoAccessToken, getVimeoAccessToken } from "@/src/api/vimeo";
 import { VideoDisplay } from "@/src/components/VideoDisplay";
-// import { auth } from "@clerk/nextjs/server";
 
-const randomIndex = Math.floor(Math.random() * 20);
+const Watch = () => {
+  const token = getVimeoAccessToken();
 
-const Home = async () => {
-  const videos = await fetchVideos({ url: requests.fetchTopRated });
-  // const vimeoVideos = await getVimeoVideos();
+  console.log("token", token);
 
-  // console.log("vimeoVideos", vimeoVideos);
+  if (token === "undefined" || !token) {
+    console.log("!token");
+    fetchVimeoAccessToken();
+  }
 
-  // auth().protect();
-
-  return (
-    <Stack>
-      <VideoDisplay />
-    </Stack>
-  );
+  return <VideoDisplay />;
 };
 
-export default Home;
+export default Watch;
