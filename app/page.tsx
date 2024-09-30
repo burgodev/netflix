@@ -1,8 +1,17 @@
+"use client"; // todo: remove client
+
 import Image from "next/image";
 import BackgroundImage from "../src/assets/background.jpg";
+import { useRouter } from "next/navigation";
 // import { SignInButton } from "@clerk/nextjs";
 
 export default function Login() {
+  const router = useRouter();
+
+  const handleGetStarted = () => {
+    router.push("/home");
+  };
+
   return (
     <div className="h-[92vh] flex align-center justify-center">
       <Image
@@ -19,7 +28,10 @@ export default function Login() {
           Ready to watch? Enter your email to create or restart your membership.
         </h3>
         {/* <SignInButton> */}
-        <button className="py-3 px-10 bg-primary rounded-[6px] font-semibold text-md">
+        <button
+          onClick={handleGetStarted}
+          className="py-3 px-10 bg-primary rounded-[6px] font-semibold text-md"
+        >
           Get Started
         </button>
         {/* </SignInButton> */}
