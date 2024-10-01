@@ -35,7 +35,7 @@ const Header = () => {
     });
   };
 
-  if (pathname !== "/home") return null;
+  if (pathname === "/") return null;
 
   return (
     <header className="fixed z-10 w-screen">
