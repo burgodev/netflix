@@ -16,6 +16,10 @@ const Video: FC<VideoProps> = ({ video, hoverAlign = "center" }) => {
   const [isHovered, setIsHovered] = useState(false);
   const hoverTimeout = useRef<NodeJS.Timeout | null>(null);
 
+  const vimeoUrl = video.link;
+  const parts = vimeoUrl.split("/");
+  const videoId = parts[parts.length - 1];
+
   const handleMouseEnter = () => {
     hoverTimeout.current = setTimeout(() => {
       setIsHovered(true);
@@ -31,7 +35,7 @@ const Video: FC<VideoProps> = ({ video, hoverAlign = "center" }) => {
   };
 
   const onClick = () => {
-    router.push(`/watch/${video.id}`);
+    router.push(`/watch/${videoId}`);
   };
 
   return (
@@ -49,17 +53,18 @@ const Video: FC<VideoProps> = ({ video, hoverAlign = "center" }) => {
           className="object-cover rounded-t-[8px]"
           fill
           alt={`${video.title}`}
-          src={video.backgroundImage}
+          src={video.pictures.base_link}
+          // src={video.backgroundImage}
         />
       </div>
 
-      {isHovered && (
+      {/* {isHovered && (
         <VideoInfo
           duration={video.duration}
           genres={video.genres}
           display={isHovered}
         />
-      )}
+      )} */}
     </div>
   );
 };
