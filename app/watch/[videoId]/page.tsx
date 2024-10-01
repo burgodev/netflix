@@ -1,6 +1,7 @@
 "use client";
 
 import { fetchVimeoAccessToken, getVimeoAccessToken } from "@/src/api/vimeo";
+import { Stack } from "@/src/components";
 import { VideoDisplay } from "@/src/components/VideoDisplay";
 
 const Watch = () => {
@@ -13,7 +14,11 @@ const Watch = () => {
     fetchVimeoAccessToken();
   }
 
-  return <VideoDisplay />;
+  return (
+    <Stack className="h-screen w-screen items-center justify-center">
+      <VideoDisplay />
+    </Stack>
+  );
 };
 
 export default Watch;
