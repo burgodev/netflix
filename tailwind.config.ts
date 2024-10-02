@@ -17,6 +17,8 @@ const config: Config = {
       },
       scale: {
         "200": "2",
+        "115": "1.15",
+        "105": "1.05",
       },
       // TODO: Fix font sizes
       fontSize: {
