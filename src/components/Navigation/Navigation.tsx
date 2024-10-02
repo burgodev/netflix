@@ -22,7 +22,7 @@ const Navigation = () => {
           Home
         </Link>
       </li>
-      <li className="h-fit">
+      {/* <li className="h-fit">
         <Link
           href="/tv-shows"
           className={cn(
@@ -51,7 +51,7 @@ const Navigation = () => {
         >
           My List
         </Link>
-      </li>
+      </li> */}
     </ul>
   );
 };
