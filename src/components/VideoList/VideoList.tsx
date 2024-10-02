@@ -11,19 +11,30 @@ type VideoListProps = {
 };
 
 const VideoList: FC<VideoListProps> = ({ videos }) => {
-  const { handleScrollLeft, handleScrollRight, translateX } =
-    useVideoListNavigation();
+  console.log("videos", videos);
+  const {
+    handleScrollLeft,
+    handleScrollRight,
+    translateX,
+    hasOverflowLeft,
+    hasOverflowRight,
+  } = useVideoListNavigation(videos.length);
+
+  console.log("hasOverflowLeft", hasOverflowLeft);
+  console.log("hasOverflowRight", hasOverflowRight);
 
   return (
     <div className="relative">
-      <button
-        onClick={handleScrollLeft}
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-40"
-      >
-        &lt;
-      </button>
+      {hasOverflowLeft && (
+        <button
+          onClick={handleScrollLeft}
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-40 h-[42px] w-[42px]"
+        >
+          &lt;
+        </button>
+      )}
       <Stack
-        className="relative overflow-visible flex-row gap-2 cursor-pointer transition-transform duration-500 hover:z-20"
+        className="relative overflow-visible flex-row gap-[1.5vw] cursor-pointer transition-transform duration-500 hover:z-20 h-[55vh] pl-[16px] items-center"
         style={{ transform: `translateX(${translateX}vw)` }}
       >
         {videos.map((video, i) => (
@@ -34,12 +45,14 @@ const VideoList: FC<VideoListProps> = ({ videos }) => {
           />
         ))}
       </Stack>
-      <button
-        onClick={handleScrollRight}
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-40"
-      >
-        &gt;
-      </button>
+      {hasOverflowRight && (
+        <button
+          onClick={handleScrollRight}
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-40 h-[42px] w-[42px]"
+        >
+          &gt;
+        </button>
+      )}
     </div>
   );
 };
