@@ -16,7 +16,8 @@ const Watch = () => {
   }
 
   return (
-    <Stack className="h-screen w-screen flex-row">
+    // TODO: is this the best way of compensating for header height?
+    <Stack className="h-screen w-screen flex-row mt-[85px]"> 
       <VideoDisplay />
       <VideoPlaylist />
     </Stack>
