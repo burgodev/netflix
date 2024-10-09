@@ -11,7 +11,6 @@ type VideoListProps = {
 };
 
 const VideoList: FC<VideoListProps> = ({ videos }) => {
-  console.log("videos", videos);
   const {
     handleScrollLeft,
     handleScrollRight,
@@ -19,9 +18,6 @@ const VideoList: FC<VideoListProps> = ({ videos }) => {
     hasOverflowLeft,
     hasOverflowRight,
   } = useVideoListNavigation(videos.length);
-
-  console.log("hasOverflowLeft", hasOverflowLeft);
-  console.log("hasOverflowRight", hasOverflowRight);
 
   return (
     <div className="relative">
