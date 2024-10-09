@@ -3,10 +3,10 @@ const CLIENT_SECRET =
   "8MLSNhYIonfJmkHtu1U5laZGGdkK/woO8Y+qvXznrLtYOjJd6yDo3e4ubUYITKEB4bEOK2UStGzo+/DhTFX8EYp2qXi/EgS63Z6QCm0pO2Z+d6xxrvTJ3g8yk5eKEB3U";
 const USER_ID = "227519127";
 
-export const getVimeoAccessToken = () => {
+export const getVimeoAccessToken = async () => {
   const token = localStorage.getItem("access_token");
 
-  if (!token) return fetchVimeoAccessToken();
+  if (!token) return await fetchVimeoAccessToken();
 
   return token;
 };
@@ -25,19 +25,22 @@ export const fetchVimeoAccessToken = async () => {
 
   const data = await response.json();
 
-  localStorage.setItem("access_token", data.access_token);
+  // localStorage.setItem("access_token", data.access_token);
 
   return data.access_token;
 };
 
-export const getVimeoVideos = async () => {
-  const token = getVimeoAccessToken();
+export const getVimeoVideos = async (token: string) => {
+  // const token = getVimeoAccessToken();
 
-  const response = await fetch(`https://api.vimeo.com/users/${USER_ID}/videos`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  const response = await fetch(
+    `https://api.vimeo.com/users/${USER_ID}/videos`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
 
   // console.log("getVimeoVideos response", response);
   const data = await response.json();
