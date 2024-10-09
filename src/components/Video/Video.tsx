@@ -53,8 +53,7 @@ const Video: FC<VideoProps> = ({ video, hoverAlign = "center" }) => {
           className="object-cover rounded-[12px]"
           fill
           alt={`${video.title}`}
-          src={video.pictures.base_link}
-          // src={video.backgroundImage}
+          src={video.backgroundImage}
         />
       </div>
 
