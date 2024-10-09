@@ -1,15 +1,26 @@
-"use client"; // todo: remove client
+"use client";
 
 import Image from "next/image";
 import BackgroundImage from "../src/assets/background.jpg";
 import { useRouter } from "next/navigation";
-// import { SignInButton } from "@clerk/nextjs";
+import { useDispatch } from "react-redux";
+import { setAccessToken } from "@/src/state/slices/accessTokenSlice";
+import { fetchVimeoAccessToken } from "@/src/api/vimeo";
+import Cookies from "js-cookie";
 
 export default function Login() {
+  const dispatch = useDispatch();
   const router = useRouter();
 
-  const handleGetStarted = () => {
-    router.push("/home");
+  const handleLogin = async () => {
+    try {
+      const token = await fetchVimeoAccessToken();
+      dispatch(setAccessToken(token));
+      Cookies.set("accessToken", token, { expires: 7 }); // Set the token in a cookie
+      router.push("/home");
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -27,14 +38,12 @@ export default function Login() {
         <h3 className="mb-2 mt-4">
           Ready to watch? Enter your email to create or restart your membership.
         </h3>
-        {/* <SignInButton> */}
         <button
-          onClick={handleGetStarted}
+          onClick={handleLogin}
           className="py-3 px-10 bg-primary rounded-[6px] font-semibold text-md"
         >
           Get Started
         </button>
-        {/* </SignInButton> */}
       </div>
     </div>
   );
