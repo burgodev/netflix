@@ -4,6 +4,7 @@ import "tailwindcss/tailwind.css";
 import "../src/globals.css";
 import { Header } from "../src/components/Header";
 import { Footer } from "@/src/components/Footer";
+import { ReduxProvider } from "@/src/components/ReduxProvider";
 
 export default function RootLayout({
   children,
@@ -12,15 +13,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* <ClerkProvider> */}
       <body>
-        <Header />
-        <main className="min-h-[calc(100vh-85px)] flex flex-col items-center overflow-hidden">
-          {children}
-        </main>
-        <Footer />
+        <ReduxProvider>
+          <Header />
+          <main className="min-h-[calc(100vh-85px)] flex flex-col items-center overflow-hidden">
+            {children}
+          </main>
+          <Footer />
+        </ReduxProvider>
       </body>
-      {/* </ClerkProvider> */}
     </html>
   );
 }
