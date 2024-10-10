@@ -16,16 +16,13 @@ const Home = async () => {
   const reduxStore = initializeStore(preloadedState);
   const { getState } = reduxStore;
 
-  const videosTest = await getVimeoVideos(accessToken);
-
-  // Fetch videos
-  const videos = await fetchVideos({ url: requests.fetchTopRated });
+  const videos = await getVimeoVideos(accessToken);
 
   return (
     <HomeClient
       preloadedState={getState()}
       accessToken={accessToken}
-      videos={videosTest}
+      videos={videos}
       randomIndex={randomIndex}
     />
   );

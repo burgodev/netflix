@@ -22,8 +22,6 @@ const HomeClient: React.FC<HomeClientProps> = ({
 }) => {
   const reduxStore = initializeStore(preloadedState);
 
-  console.log("videos", propVideos);
-
   const videos = propVideos.map((video) => ({
     backgroundImage: video.pictures.base_link,
     overview: video.description,
@@ -33,11 +31,9 @@ const HomeClient: React.FC<HomeClientProps> = ({
   return (
     <Provider store={reduxStore}>
       <Stack>
-        <Banner video={videos[2]} />
+        <Banner video={videos[0]} />
 
-        <VideoList videos={videos} />
-
-        {/* <VideoContentWrapper videos={videos} /> */}
+        <VideoContentWrapper videos={videos} />
       </Stack>
     </Provider>
   );
