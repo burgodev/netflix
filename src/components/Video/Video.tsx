@@ -50,7 +50,7 @@ const Video: FC<VideoProps> = ({ video, hoverAlign = "center" }) => {
       <div className="relative w-full h-full min-w-[15vw]">
         <Image
           sizes="(max-width: 768px) 30vw, (max-width: 1200px) 18.25, (max-width: 1400px) 15.25, 30vw"
-          className="object-cover rounded-[12px]"
+          className="object-cover rounded-[6px]"
           fill
           alt={`${video.title}`}
           src={video.backgroundImage}
