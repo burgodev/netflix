@@ -30,7 +30,7 @@ const VideoList: FC<VideoListProps> = ({ videos }) => {
         </button>
       )}
       <Stack
-        className="relative overflow-visible flex-row gap-[1.5vw] cursor-pointer transition-transform duration-500 hover:z-20 h-[55vh] pl-[16px] items-center"
+        className="relative overflow-visible flex-row gap-[1.5vw] cursor-pointer transition-transform duration-500 hover:z-20 pl-[16px] py-[16px] items-center"
         style={{ transform: `translateX(${translateX}vw)` }}
       >
         {videos.map((video, i) => (
