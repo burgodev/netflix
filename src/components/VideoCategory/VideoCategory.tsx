@@ -1,36 +1,21 @@
 "use client";
 
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { Stack, Typography } from "../atomic";
 import { VideoList } from "../VideoList";
-import { fetchVideos } from "@/src/api/fetchVideos";
-import { getVimeoVideos } from "@/src/api/vimeo";
+import { Video } from "@/src/types/api";
 
 type VideoCategoryProps = {
   title: string;
   fetchUrl: string;
+  videos: Video[];
 };
 
-const VideoCategory: FC<VideoCategoryProps> = ({ title, fetchUrl }) => {
-  // const videos = await fetchVideos({ url: fetchUrl });
-
-  const [videos, setVideos] = useState<any>([]);
-
-  useEffect(() => {
-    const fetchVideo = async () => {
-      const videos = await getVimeoVideos();
-      setVideos(videos);
-    };
-
-    fetchVideo();
-  }, []);
-
-  console.log("videos", videos);
-
+const VideoCategory: FC<VideoCategoryProps> = ({ title, videos }) => {
   return (
-    <Stack className="min-h-[25vh] overflow-hidden">
+    <Stack className="overflow-hidden gap-4">
       <Typography variant="h2">{title}</Typography>
-      <VideoList videos={videos} />
+      {videos?.length && <VideoList videos={videos} />}
     </Stack>
   );
 };
