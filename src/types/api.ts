@@ -35,6 +35,15 @@ export type Video = {
   genres: string[];
 };
 
+export type VimeoVideo = {
+  id: string;
+  link: string;
+  description: string;
+  pictures: {
+    baseLink: string;
+  };
+};
+
 // export type BaseEntity = {
 //   id: string;
 //   createdAt: number;
