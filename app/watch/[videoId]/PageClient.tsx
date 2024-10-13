@@ -11,25 +11,23 @@ import { VideoPlaylist } from "@/src/components/VideoPlaylist";
 
 interface PageClientProps {
   preloadedState: AppState;
-  videos: Video[];
+  video: Video;
   randomIndex: number;
   accessToken: string;
 }
 
 const PageClient: React.FC<PageClientProps> = ({
   preloadedState,
-  videos: propVideos,
+  video,
   randomIndex,
   accessToken,
 }) => {
   const reduxStore = initializeStore(preloadedState);
 
-  console.log("propVideos", propVideos);
-
   return (
     <Provider store={reduxStore}>
       <Stack className="h-screen w-screen flex-row mt-[85px]">
-        <VideoDisplay video={propVideos[0]} />
+        <VideoDisplay video={video} />
         <VideoPlaylist />
       </Stack>
     </Provider>

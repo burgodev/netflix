@@ -20,12 +20,14 @@ export type WatchProps = {
 const Watch = async ({ params }: WatchProps) => {
   const cookieStore = cookies();
   const accessToken = cookieStore.get("accessToken")?.value || "";
+  const { videoId } = params;
 
   const preloadedState = { accessToken: { token: accessToken } };
   const reduxStore = initializeStore(preloadedState);
   const { getState } = reduxStore;
 
   const videos = await getVimeoVideos(accessToken);
+  const video = await getVimeoVideo({ token: accessToken, videoId });
 
   return (
     // TODO: is this the best way of compensating for header height?
@@ -34,6 +36,7 @@ const Watch = async ({ params }: WatchProps) => {
       preloadedState={getState()}
       accessToken={accessToken}
       videos={videos}
+      video={video}
     />
   );
 };
