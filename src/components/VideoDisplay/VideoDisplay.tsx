@@ -1,6 +1,3 @@
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
-import { getVimeoVideo } from "@/src/api/vimeo";
 import { Video } from "@/src/types/api";
 
 interface PageClientProps {
