@@ -1,26 +1,13 @@
-"use client";
-
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { getVimeoVideo } from "@/src/api/vimeo";
+import { Video } from "@/src/types/api";
 
-const VideoDisplay = () => {
-  const [video, setVideo] = useState<any>(null);
-  const pathname = usePathname();
+interface PageClientProps {
+  video: Video;
+}
 
-  const videoId = pathname.split("/").filter(Boolean).pop();
-
-  useEffect(() => {
-    const fetchVideo = async () => {
-      if (videoId) {
-        const video = await getVimeoVideo({ videoId });
-        setVideo(video);
-      }
-    };
-
-    fetchVideo();
-  }, [videoId]);
-
+const VideoDisplay = ({ video }: PageClientProps) => {
   return (
     <div className="min-w-[60%]">
       {video && video.player_embed_url && (
