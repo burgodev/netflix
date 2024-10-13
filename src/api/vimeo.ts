@@ -12,22 +12,25 @@ export const getVimeoAccessToken = async () => {
 };
 
 export const fetchVimeoAccessToken = async () => {
-try {
-  const response = await fetch("https://api.vimeo.com/oauth/authorize/client", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: "Basic " + btoa(`${CLIENT_ID}:${CLIENT_SECRET}`),
-    },
-    body: JSON.stringify({
-      grant_type: "client_credentials",
-    }),
-  });
+  try {
+    const response = await fetch(
+      "https://api.vimeo.com/oauth/authorize/client",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Basic " + btoa(`${CLIENT_ID}:${CLIENT_SECRET}`),
+        },
+        body: JSON.stringify({
+          grant_type: "client_credentials",
+        }),
+      }
+    );
 
-  const data = await response.json();
-  } catch(err) { 
-    console.log(err)
-  }  
+    const data = await response.json();
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 export const getVimeoVideos = async (token: string) => {
@@ -43,9 +46,13 @@ export const getVimeoVideos = async (token: string) => {
   return data.data; // Adjust based on the actual response structure
 };
 
-export const getVimeoVideo = async ({ videoId }: { videoId: string }) => {
-  const token = getVimeoAccessToken();
-
+export const getVimeoVideo = async ({
+  videoId,
+  token,
+}: {
+  videoId: string;
+  token: string;
+}) => {
   const response = await fetch(`https://api.vimeo.com/videos/${videoId}`, {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -54,5 +61,5 @@ export const getVimeoVideo = async ({ videoId }: { videoId: string }) => {
 
   const data = await response.json();
 
-  return data; 
+  return data;
 };
