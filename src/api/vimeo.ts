@@ -35,7 +35,7 @@ export const fetchVimeoAccessToken = async () => {
   }
 };
 
-export const getVimeoVideos = async (token: string) => {
+export const getVimeoVideos = async ({ token }: { token: string }) => {
   const response = await fetch(
     `https://api.vimeo.com/users/${USER_ID}/videos`,
     {
@@ -45,7 +45,7 @@ export const getVimeoVideos = async (token: string) => {
     }
   );
   const data = await response.json();
-  return data.data; // Adjust based on the actual response structure
+  return data.data;
 };
 
 export const getVimeoVideo = async ({
