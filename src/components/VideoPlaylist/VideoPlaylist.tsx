@@ -1,18 +1,16 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
-import { getVimeoVideo } from "@/src/api/vimeo";
+import { Video } from "@/src/types/api";
 import { Stack, Typography } from "../atomic";
 
-const VideoPlaylist = () => {
+interface VideoPlaylistProps {
+  videos: Video[];
+}
+
+const VideoPlaylist: React.FC<VideoPlaylistProps> = ({ videos }) => {
   return (
-    <Stack className="gap-4">
-      <Typography>Video 1</Typography>
-      <Typography>Video 2</Typography>
-      <Typography>Video 3</Typography>
-      <Typography>Video 4</Typography>
-      <Typography>Video 5</Typography>
+    <Stack className="gap-4 flex-1">
+      {videos.map((video) => (
+        <Typography key={video.uri}>{video.name}</Typography>
+      ))}
     </Stack>
   );
 };
