@@ -7,12 +7,15 @@ import { useDispatch } from "react-redux";
 import { setAccessToken } from "@/src/state/slices/accessTokenSlice";
 import { fetchVimeoAccessToken } from "@/src/api/vimeo";
 import Cookies from "js-cookie";
+import { useState } from "react";
 
 export default function Login() {
+  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
   const router = useRouter();
 
   const handleLogin = async () => {
+    setIsLoading(true);
     try {
       const token = await fetchVimeoAccessToken();
       dispatch(setAccessToken(token));
@@ -21,6 +24,7 @@ export default function Login() {
     } catch (err) {
       console.log(err);
     }
+    setIsLoading(false);
   };
 
   return (
@@ -42,7 +46,7 @@ export default function Login() {
           onClick={handleLogin}
           className="py-3 px-10 bg-primary rounded-[6px] font-semibold text-md"
         >
-          Get Started
+          {isLoading ? "Is Loading..." : "Get Started"}
         </button>
       </div>
     </div>
