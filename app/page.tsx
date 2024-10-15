@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { setAccessToken } from "@/src/state/slices/accessTokenSlice";
 import { fetchVimeoAccessToken } from "@/src/api/vimeo";
-import Cookies from "js-cookie";
 import { useState } from "react";
 
 export default function Login() {
@@ -17,14 +16,13 @@ export default function Login() {
   const handleLogin = async () => {
     setIsLoading(true);
     try {
-      const token = await fetchVimeoAccessToken();
-      dispatch(setAccessToken(token));
-      Cookies.set("accessToken", token, { expires: 7 }); // Set the token in a cookie
+      const accessToken = await fetchVimeoAccessToken();
+      dispatch(setAccessToken(accessToken));
+      document.cookie = `accessToken=${accessToken}`;
       router.push("/home");
     } catch (err) {
       console.log(err);
     }
-    setIsLoading(false);
   };
 
   return (
