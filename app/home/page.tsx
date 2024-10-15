@@ -12,11 +12,11 @@ const Home = async () => {
   const cookieStore = cookies();
   const accessToken = cookieStore.get("accessToken")?.value || "";
 
-  const preloadedState = { accessToken: { token: accessToken } };
+  const preloadedState = { accessToken: { accessToken } };
   const reduxStore = initializeStore(preloadedState);
   const { getState } = reduxStore;
 
-  const videos = await getVimeoVideos(accessToken);
+  const videos = await getVimeoVideos({ token: accessToken });
 
   return (
     <HomeClient
