@@ -13,7 +13,7 @@ interface PageClientProps {
 
 const PageClient: React.FC<PageClientProps> = ({ video, videos }) => {
   return (
-    <Stack className="h-screen w-screen flex-row mt-[85px]">
+    <Stack className="w-screen flex-row py-[85px] px-[24px] gap-8">
       <VideoDisplay video={video} />
       <VideoPlaylist videos={videos} />
     </Stack>
