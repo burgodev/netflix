@@ -8,10 +8,10 @@ import { useRouter } from "next/navigation";
 
 type VideoProps = {
   video: VideoType;
-  hoverAlign?: "left" | "center";
+  isVertical?: boolean;
 };
 
-const Video: FC<VideoProps> = ({ video, hoverAlign = "center" }) => {
+const Video: FC<VideoProps> = ({ video, isVertical }) => {
   const router = useRouter();
   const [isHovered, setIsHovered] = useState(false);
   const hoverTimeout = useRef<NodeJS.Timeout | null>(null);
@@ -41,13 +41,19 @@ const Video: FC<VideoProps> = ({ video, hoverAlign = "center" }) => {
   return (
     <div
       onClick={onClick}
-      className={`relative h-[25vh] md:h-[35vh] xl:h-[50vh] min-w-[30vw] sm:min-w-[22.25vw] md:min-w-[18vw] group transform transition-all duration-300 ${
+      className={`relative group transform transition-all duration-300 origin-center${
         isHovered ? "opacity-100 scale-110 z-10 cursor-pointer" : "opacity-75"
-      } ${"origin-center"}`}
+      }
+      ${
+        isVertical
+          ? "h-[7.5vw] w-[7.5vw]"
+          : "h-[25vh] md:h-[35vh] xl:h-[50vh] min-w-[30vw] sm:min-w-[22.25vw] md:min-w-[18vw]"
+      }  
+      `}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="relative w-full h-full min-w-[15vw]">
+      <div className="relative w-full h-full">
         <Image
           sizes="(max-width: 768px) 30vw, (max-width: 1200px) 18.25, (max-width: 1400px) 15.25, 30vw"
           className="object-cover rounded-[6px]"
