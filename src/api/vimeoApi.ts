@@ -1,3 +1,8 @@
+import {
+  vimeoVideotoVideo,
+  vimeoVideotoVideoArray,
+} from "../mappers/vimeoVideotoVideo";
+
 const CLIENT_ID = "160a0f5414634953a5d79b7b9063c958c93aa8cd"; // TODO: env
 const CLIENT_SECRET =
   "8MLSNhYIonfJmkHtu1U5laZGGdkK/woO8Y+qvXznrLtYOjJd6yDo3e4ubUYITKEB4bEOK2UStGzo+/DhTFX8EYp2qXi/EgS63Z6QCm0pO2Z+d6xxrvTJ3g8yk5eKEB3U";
@@ -45,7 +50,8 @@ export const getVimeoVideos = async ({ token }: { token: string }) => {
     }
   );
   const data = await response.json();
-  return data.data;
+
+  return vimeoVideotoVideoArray(data.data);
 };
 
 export const getVimeoVideo = async ({
@@ -63,5 +69,5 @@ export const getVimeoVideo = async ({
 
   const data = await response.json();
 
-  return data;
+  return vimeoVideotoVideo(data);
 };
