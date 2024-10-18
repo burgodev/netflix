@@ -1,4 +1,4 @@
-import { getVimeoVideo, getVimeoVideos } from "@/src/api/vimeo";
+import { getVimeoVideo, getVimeoVideos } from "@/src/api/vimeoApi";
 
 import { cookies } from "next/headers";
 import PageClient from "./PageClient";

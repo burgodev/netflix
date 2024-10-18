@@ -4,7 +4,7 @@ import { initializeStore } from "@/src/state/store";
 
 import { cookies } from "next/headers";
 import HomeClient from "./HomeClient";
-import { getVimeoVideos } from "@/src/api/vimeo";
+import { getVimeoVideos } from "@/src/api/vimeoApi";
 
 const randomIndex = Math.floor(Math.random() * 20);
 

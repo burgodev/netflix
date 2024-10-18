@@ -5,7 +5,7 @@ import BackgroundImage from "../src/assets/background.jpg";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { setAccessToken } from "@/src/state/slices/accessTokenSlice";
-import { fetchVimeoAccessToken } from "@/src/api/vimeo";
+import { fetchVimeoAccessToken } from "@/src/api/vimeoApi";
 import { useState } from "react";
 
 export default function Login() {
