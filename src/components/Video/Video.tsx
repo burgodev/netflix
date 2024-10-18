@@ -23,7 +23,7 @@ const Video: FC<VideoProps> = ({ video, isVertical }) => {
   const handleMouseEnter = () => {
     hoverTimeout.current = setTimeout(() => {
       setIsHovered(true);
-    }, 500);
+    }, 250);
   };
 
   const handleMouseLeave = () => {
