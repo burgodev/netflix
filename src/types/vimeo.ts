@@ -53,7 +53,7 @@ interface User {
   pictures: Pictures;
 }
 
-interface Video {
+export interface VimeoVideo {
   app: App;
   categories: string[];
   content_rating: string[];
