@@ -4,11 +4,11 @@ import { Provider } from "react-redux";
 import { Stack, VideoList } from "@/src/components";
 import { Banner } from "@/src/components/Banner";
 import { VideoContentWrapper } from "@/src/components/VideoContentWrapper";
-import { AppState, initializeStore } from "@/src/state/store";
+import { initializeStore } from "@/src/state/store";
 import { Video } from "@/src/types/api";
 
 interface HomeClientProps {
-  preloadedState: AppState;
+  preloadedState: any; // TODO: check type
   videos: Video[];
 }
 
