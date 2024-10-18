@@ -18,11 +18,9 @@ const useVideoListNavigation = (videosLength: number) => {
   };
 
   useEffect(() => {
-    setHasOverflowLeft(translateX < 0);
-    console.log("translateX", translateX);
-    console.log("videosLength", videosLength);
     const value = translateX > -(videosLength - 5) * navigationStep;
-    console.log("value", value);
+
+    setHasOverflowLeft(translateX < 0);
     setHasOverflowRight(value);
   }, [translateX, videosLength]);
 
