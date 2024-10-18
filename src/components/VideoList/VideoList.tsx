@@ -34,11 +34,7 @@ const VideoList: FC<VideoListProps> = ({ videos }) => {
         style={{ transform: `translateX(${translateX}vw)` }}
       >
         {videos.map((video, i) => (
-          <Video
-            video={video}
-            hoverAlign={i === 0 ? "left" : "center"}
-            key={video.id}
-          />
+          <Video video={video} key={video.id} />
         ))}
       </Stack>
       {hasOverflowRight && (

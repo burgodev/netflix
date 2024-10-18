@@ -10,11 +10,11 @@ import { OutlinedIcon } from "../../../OutlinedIcon";
 import { Stack, Typography } from "../../../atomic";
 import { Video } from "@/src/types/api";
 
-type VideoInfoProps = Pick<Video, "duration" | "genres"> & {
+type VideoInfoProps = Pick<Video, "duration" | "categories"> & {
   display: boolean;
 };
 
-const VideoInfo: FC<VideoInfoProps> = ({ duration, genres, display }) => {
+const VideoInfo: FC<VideoInfoProps> = ({ duration, categories, display }) => {
   return (
     <Stack
       className={`bg-background rounded-b-[8px] transition-opacity duration-300 p-2 sm:p-3 lg:p-4 gap-1 md:gap-2 lg:gap-3 border-radius rounded-[6px]${
@@ -45,9 +45,9 @@ const VideoInfo: FC<VideoInfoProps> = ({ duration, genres, display }) => {
       </Stack>
 
       <Stack className="flex-row flex-wrap gap-3">
-        {genres.map((genre) => (
-          <Typography key={genre} variant="span">
-            {genre}
+        {categories.map((category) => (
+          <Typography key={category} variant="span">
+            {category}
           </Typography>
         ))}
       </Stack>

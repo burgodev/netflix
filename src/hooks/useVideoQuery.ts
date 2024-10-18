@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 
-import { tmdbVideoToVideo } from "@/src/mappers/tmdbVideoToVideo";
 import { Video } from "@/src/types/api";
 
 type UseVideoQueryProps = {
@@ -22,7 +21,7 @@ const useVideoQuery = ({ fetchUrl }: UseVideoQueryProps) => {
 
         const json = await response.json();
 
-        setVideos(tmdbVideoToVideo(json.results));
+        // setVideos(tmdbVideoToVideo(json.results));
         setLoading(false);
       } catch (error) {
         console.error(error);
