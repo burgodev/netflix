@@ -38,4 +38,5 @@ export const useStore = (initialState) => {
 // export type AppState = ReturnType<AppStore["getState"]>;
 // export type AppDispatch = AppStore["dispatch"];
 
-export const wrapper = createWrapper < AppStore > (makeStore);
+// export const wrapper = createWrapper < AppStore > (makeStore);
+export const wrapper = createWrapper(makeStore);
