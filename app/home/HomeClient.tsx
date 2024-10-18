@@ -10,29 +10,15 @@ import { Video } from "@/src/types/api";
 interface HomeClientProps {
   preloadedState: AppState;
   videos: Video[];
-  randomIndex: number;
-  accessToken: string;
 }
 
-const HomeClient: React.FC<HomeClientProps> = ({
-  preloadedState,
-  videos: propVideos,
-  randomIndex,
-  accessToken,
-}) => {
+const HomeClient: React.FC<HomeClientProps> = ({ preloadedState, videos }) => {
   const reduxStore = initializeStore(preloadedState);
-
-  const videos = propVideos.map((video) => ({
-    backgroundImage: video.pictures.base_link,
-    overview: video.description,
-    link: video.link,
-  }));
 
   return (
     <Provider store={reduxStore}>
       <Stack>
         <Banner video={videos[0]} />
-
         <VideoContentWrapper videos={videos} />
       </Stack>
     </Provider>
