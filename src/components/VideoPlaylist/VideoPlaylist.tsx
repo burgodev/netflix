@@ -10,7 +10,7 @@ const VideoPlaylist: React.FC<VideoPlaylistProps> = ({ videos }) => {
   if (!videos) return null;
 
   return (
-    <Stack className="gap-4 flex-1">
+    <Stack className="gap-4 flex-1 max-h-[81vh] overflow-auto">
       {videos.map((video) => (
         <Stack key={video.id} className="flex-row gap-4">
           <Video video={video} isVertical />
