@@ -7,17 +7,16 @@ interface PageClientProps {
 const VideoDisplay = ({ video }: PageClientProps) => {
   return (
     <div className="min-w-[50%]">
-      {video && video.player_embed_url && (
+      {video && video.link && (
         <iframe
           className="w-[60vw] h-[80vh] aspect-video"
-          src={video.player_embed_url}
+          src={video.link}
           width="100%"
           height="50%"
           frameBorder="0"
           allow="autoplay; fullscreen; picture-in-picture"
           allowFullScreen
-          title={video.name}
-          // style={{ minWidth: "1200px", minHeight: "675px", background: "red" }} // Set the minimum width and height here
+          title={video.title}
         />
       )}
     </div>

@@ -7,18 +7,14 @@ interface VideoPlaylistProps {
 }
 
 const VideoPlaylist: React.FC<VideoPlaylistProps> = ({ videos }) => {
-  console.log("videos adas", videos);
-
   if (!videos) return null;
+
   return (
     <Stack className="gap-4 flex-1">
       {videos.map((video) => (
-        <Stack key={video.uri} className="flex-row gap-4">
-          <Video
-            video={{ ...video, backgroundImage: video.pictures.base_link }}
-            isVertical
-          />
-          <Typography variant="span">{video.name}</Typography>
+        <Stack key={video.id} className="flex-row gap-4">
+          <Video video={video} isVertical />
+          <Typography variant="span">{video.title}</Typography>
         </Stack>
       ))}
     </Stack>
