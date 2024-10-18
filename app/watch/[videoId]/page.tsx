@@ -17,7 +17,7 @@ const Watch = async ({ params }: WatchProps) => {
   const video = await getVimeoVideo({ token: accessToken, videoId });
   const videos = await getVimeoVideos({ token: accessToken });
 
-  return <PageClient video={video} videos={videos} />;
+  return <PageClient video={video} relatedVideos={videos} />;
 };
 
 export default Watch;

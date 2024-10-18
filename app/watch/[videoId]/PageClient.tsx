@@ -8,14 +8,14 @@ import { VideoPlaylist } from "@/src/components/VideoPlaylist";
 
 interface PageClientProps {
   video: Video;
-  videos: Video[];
+  relatedVideos: Video[];
 }
 
-const PageClient: React.FC<PageClientProps> = ({ video, videos }) => {
+const PageClient: React.FC<PageClientProps> = ({ video, relatedVideos }) => {
   return (
     <Stack className="w-screen flex-row py-[85px] px-[24px] gap-8">
       <VideoDisplay video={video} />
-      <VideoPlaylist videos={videos} />
+      <VideoPlaylist videos={relatedVideos} />
     </Stack>
   );
 };
